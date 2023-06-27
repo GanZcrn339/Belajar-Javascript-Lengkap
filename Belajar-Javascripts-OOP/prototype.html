@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prototype</title>
+  </head>
+  <body>
+    <script>
+      function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sayHello = function (name) {
+          console.info(`Hello ${name}, my name is ${this.firstName}`);
+        };
+      }
+      //   kita buat sebuah person dimana person ini sebenernya bisa di sebut prototype
+      // karena memang sudah otomatis mempunyai prototype yaitu prototype Object
+      // yang berisi method method
+
+      Person.prototype.sayBye = function () {
+        console.info("Good Bye");
+      };
+      //   untuk menambahkan prototype di Person bisa seperti di atas
+
+      Person.prototype.run = function () {
+        console.info(`${this.firstName} is running`);
+      };
+      //   bisa bikin lebih dari 1 protype
+
+      //   nah berarti konsep nya seperti ini Person(beserta property nya)->Person.Prototype->object.prototype
+      // jika tidak ada nama property di Constructor maka akan mengakses di bagian prototype Constructor nya
+      // jika masih tidak ada maka yang di akses di prototype terakhir yaitu object prototype
+      //   jika ada nama property yang sama di protype yang berbeda, maka property pertama yang di buat yang akan di akses sisa nya di abaikan..
+      const eko = new Person("Eko", "Khannedy");
+
+      const budi = new Person("Budi", "Nugraha");
+      //   kita bisa buat dua buah object seperti di atas
+
+      console.log(eko);
+      console.log(budi);
+
+      eko.sayBye();
+      eko.run();
+    </script>
+  </body>
+</html>

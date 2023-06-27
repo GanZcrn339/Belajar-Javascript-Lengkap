@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fetch API</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >Username:
+        <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password"
+        >Password:
+        <input type="password" id="password" name="password" />
+      </label>
+      <br />
+      <input type="button" id="login" value="Login" />
+    </form>
+    <h1 id="response"></h1>
+    <script>
+      // dibawah ini adalah cara melakukan request menggunakan fetch api
+      function doLogin() {
+        const request = new Request("https://padjar.free.beeceptor.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+        // kita gunakan class Request dimana dalam param nya ada end point dari web server nya
+        // kemudian param kedua di isi dengan object dimana terdiri dari method
+        // header yang berisi content type
+        // kemudian ada body dimana di atas kita mengambil value dari element username dan password
+        // yang dijadikan JSON string
+
+        // Promise<Response> dalam fetch api sudah ada promise nya
+        const response = fetch(request);
+        // kita masukan object request fetch nya ke dalam const response
+
+        response
+          .then((response) => response.json()) //ini mirip json.parse artinya kode di samping mengembalikan response.json response nya dalam bentuk json
+          .then(function (json) {
+            document.getElementById("response").textContent = json.success;
+          }) //nah jika sukses maka akan mengisi textContent dari element response dengan json.succes
+          .catch(function (error) {
+            document.getElementById("response").textContent = error;
+            // kalo ini kalo error
+          });
+      }
+
+      document.getElementById("login").onclick = doLogin;
+      //   jangan lupa button nya kasih onclick ke function doLogin
+    </script>
+  </body>
+</html>

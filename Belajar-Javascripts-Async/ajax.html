@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AJAX</title>
+    <!-- mengirim request dan menerima ajax -->
+    <!-- ajax biasa nya di gunakan untuk mengirim/mendapatkan dan menerima data dari URL Lain(server) -->
+  </head>
+  <body>
+    <h1 id="response"></h1>
+    <script>
+      const ajax = new XMLHttpRequest();
+      ajax.open("GET", "api/hello.json");
+      //   untuk mengirim request ajax kita bisa menggunakan class XMLHttpRequest
+      // kemudian kita gunakan method open yang berfungsi menginisialisasi sebuah request
+      //    dan masukan method get untuk mendapatkan data dari server
+      // kemudian masukan path/lokasi nya seperti di atas kemudian ajax.send
+      ajax.addEventListener("load", function () {
+        const json = JSON.parse(ajax.responseText); //responseText untuk mengambil data
+        // dari server yang mana bentuk nya adalah json yang harus di parse
+        // parse ini berfungsi mengambil value dari key json
+        // event load berfungsi untuk menjalankan perintah saat pertama kali web di muat
+
+        const header = document.getElementById("response");
+        header.textContent = json.response;
+        // kemudian di masukan ke dalam element h1 si response nya
+        // json.response untuk mendapatkan value dari properti response di file json
+      });
+      //   di atas adalah cara menerima response ajax nya
+      // kita bisa gunakan addEventListener dimana event nya yaitu load di dalam funciton nya
+      // kita ambil response text dari ajax nya yang sudah di konversi ke string menggunakan method parse
+      // karena sebelum nya merupakan JSON
+      //   kemudian kita isi element header dengan id response di atas menggunakan json.response nya
+      ajax.send();
+      //   kita send
+    </script>
+  </body>
+</html>

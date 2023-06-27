@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>With Statement</title>
+    <!-- dengan menggunakan with statement kita bisa memanggil
+    property dari objek tanpa memanggil objek nya, tapi tidak di rekomendasikan
+    -->
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Eko",
+        middleName: "Kurniawan",
+        lastName: "Khannedy",
+      };
+
+      console.info(person.firstName);
+      console.info(person.middleName);
+      console.info(person.lastName);
+      //   di atas adalah contoh pemanggilan objek tanpa with statement
+
+      const firstName = "Budi";
+      const lastName = "Nugraha";
+      //   nah with statement tidak di rekomendasikan karena  bisa membuat ambigu
+      //   jika ada var yang sama nama nya dengan property dari objek yang di panggil di with statement
+
+      with (person) {
+        //nama objek nya di simpan terlebih dahulu di parameter with nya
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+      //   nah di atas dengan with statement jadi ketika memanggilnya di consol
+      // kita langsung memanggil property nya, dengan syarat si objek nya di simpan di [arameter with nya
+    </script>
+  </body>
+</html>

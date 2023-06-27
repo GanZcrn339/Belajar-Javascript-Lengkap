@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>For In</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Eko",
+        middleName: "Kurniawan",
+        lastName: "Khannedy",
+      };
+      //   kita buat objek const person
+
+      //   nah di dalam parameter for nya kita masukan si objek person ke dalam const property
+      for (const property in person) {
+        document.writeln(`<p>${property} : ${person[property]}</p>`);
+        // lalu kita tampilkan dengan memanggil const property nya untuk
+        // menampilkan seluruh property yang ada di objek person
+        // sedangkan untuk memanggil value nya kita bisa menulis seperti di atas
+        // person[property]
+        // hasil tampilan nya akan menampilkan seluruh property dan value dari
+        // objek person
+      }
+
+      const names = ["Eko", "Kurniawan", "Khannedy"];
+      for (const index in names) {
+        document.writeln(`<p>${index} : ${names[index]}</p>`);
+      }
+      //   begitu pula dengan ini tapi di atas var nya adalah array
+      // jika kita menggunakan for in, maka yang di tampilkan nya nanti adalah index yaitu 0 1 2
+      // dan untuk menampilkan value dari index nya, bisa di tulis seperti di atas di bagian writeln
+    </script>
+  </body>
+</html>

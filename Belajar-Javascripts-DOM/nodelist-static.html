@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NodeList</title>
+  </head>
+  <body>
+    <ul id="menu1">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+
+    <ul id="menu2">
+      <li>Eko</li>
+      <li>Kurniawan</li>
+      <li>Khannedy</li>
+    </ul>
+
+    <script>
+      let list = document.querySelectorAll("li");
+      //   kita ambil semua li nya kedalam var list
+
+      const menu1 = document.getElementById("menu1");
+      //   lalu kita ambil element dengan id menu1 dan masukan ke dalam const menu1
+      menu1.appendChild(document.createElement("li"));
+      menu1.appendChild(document.createElement("li"));
+      //   kita tambahkan child nya dengan membuat dua element li
+
+      console.info(list);
+      //   kita tampilkan list, maka hasilnya tidak akan ada yang berubah
+      // menu1 yang diharapkan menjadi 5 li nya tetep ada 3
+      list = document.querySelectorAll("li");
+      //   untuk melihat hasil yang sudah di tambahkan harus di query lagi li nya dan dimasukan ke dalam var yang sama
+      console.info(list);
+      //   ketika di panggil maka hasil nya akan jadi 8 sesuai dengan perubahan nya,
+      //   8 karena semua li di ambil
+
+      //   nah jika child nya di ambil semua lalu dimasukan ke dalam var menggunakan querySelectorAll
+      //   kemudian bagian parent nya di get dan dimasukan ke dalam var juga, lalu kita ubah atau tambahkan seperti di atas
+      //   kemudian kita tampilkan var child nya, maka tidak akan berubah
+      //   akan berubah jika kita masukan lagi QSA nya
+    </script>
+  </body>
+</html>

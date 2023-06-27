@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Static Method</title>
+    <!-- ini sama seperti static filed, si method menjadi milik si class nya -->
+  </head>
+  <body>
+    <script>
+      class MathUtil {
+        static sum(
+          ...numbers //tanda ... parameter nya menjadi array
+        ) {
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+        //kita di atas membuat perhitungan + menggunakan for of
+      }
+
+      const result = MathUtil.sum(1, 1, 1, 1, 1);
+      //   nah cara mengakses static method bisa langsung di panggil nama class nya
+      // diikuti nama method nya, diatas kita isi parameter nya dengan angka 1 yang akan
+      //   menambahkan seluruh parameter nya
+      console.info(result);
+      //   kita liat hasil nya
+    </script>
+  </body>
+</html>

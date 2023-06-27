@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Unary</title>
+    <!-- 
+        untuk menandakan positif = +
+        untuk menandakan negatif = -
+        untuk mengincrement atau menambahkan +1 suatu data = ++
+        untuk mendecrement atau menurunkan -1 suatu data = --
+    -->
+  </head>
+  <body>
+    <script>
+      let result = +1;
+      //   artinya +1 yang dimasukan ke dalam var result bernilai positif +
+      document.writeln("<p>" + result + "</p>");
+      //   kita tampilkan
+
+      result--; // result = result - 1; result -= 1; 0
+      //   result = +1 di kurangi/decrement sebanyak 1
+      //   jadi hasilnya 0 karena result = +1 dikurangi 1
+      document.writeln("<p>" + result + "</p>");
+
+      result++; // result = result + 1; result += 1; 1
+      document.writeln("<p>" + result + "</p>");
+      //   ini juga sama tapi di increment
+
+      result = -result; // -1
+      document.writeln("<p>" + result + "</p>");
+      //   nah kali di atas adalah menjadikan hasil result terakhir menjadi negatif
+      // artinya result = 1 = -1
+    </script>
+  </body>
+</html>

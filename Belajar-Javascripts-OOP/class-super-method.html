@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class : Super Method</title>
+  </head>
+  <body>
+    <script>
+      class Shape {
+        paint() {
+          console.info("Paint Shape");
+        }
+      }
+
+      class Circle extends Shape {
+        paint() {
+          super.paint(); //dengan menggunakan keyword super kita juga bisa memanggil method dari parent class nya
+          console.info("Paint Circle");
+        }
+      }
+
+      const circle = new Circle();
+      circle.paint(); //nah kita tinggal panggil method nya seperti di samping
+      //   jadi hasil nya akan menampilkan
+      // Paint Shape (yang merupakan pemnaggilan dari method parent class menggunakan keyword super)
+      // Paint Circle dari method paint yang memang ada di class circle
+
+      // untuk memanggil property atau method harus di panggil secara detail baru muncul di console
+    </script>
+  </body>
+</html>

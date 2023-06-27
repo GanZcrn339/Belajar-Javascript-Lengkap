@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class Property</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          this.name = name; //nah untuk menambahkan property nya seperti di samping ini
+        }
+      }
+
+      const eko = new Person("Eko");
+      //   eko.name = "eko" kita bisa juga menambahkan nya langsung di object nya
+      console.info(eko);
+      console.info(eko.name); //ini untuk pemanggilan property nya
+      // untuk property tidak cukup dengan memasukan atau membuat object dari class nya saja untuk memanggil nya
+      // tapi harus menggunakan di panggil dengan detail seperti di atas console.info(eko.name)
+
+      const budi = new Person("Budi");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      {
+        const names = ["Eko", "Kurniawan", "Khannedy", "Budi", "Joko"];
+        let [firstName, middleName, lastName, ...others] = names;
+        // bagian firstname, middlename, dan lastname merupakan sebuah variable
+        // yang mengambil array names dari index 0 sampai ke 2
+        // sedangkan ...other merupakan spread variable bertipe array lagi yang mengambil sisa array names yang
+        // belum di masukan ke dalam variabel, kemudian = nama array nya yaitu names
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+        console.info(others);
+      }
+      //   di atas adalah destructuring array, yaitu untuk mengambil value dari array
+
+      {
+        const person = {
+          firstName: "Eko",
+          lastName: "Khannedy",
+          address: {
+            street: "Jalan Belum Ada",
+            city: "Jakarta",
+            country: "Indonesia",
+          },
+          hobby: "Game",
+          channel: "Programmer Zaman Now",
+        };
+        // selain array kita juga bisa mendestructuring sebuah objek seperti di atas
+
+        let {
+          firstName,
+          lastName,
+          address: { city, street, country },
+          ...others
+        } = person;
+        console.info(firstName);
+        console.info(lastName);
+        console.info(city);
+        console.info(street);
+        console.info(country);
+        console.info(others);
+      }
+      //   cara mengambil value nya seperti di atas, jadi pemanggilan nya tidak seperti memanggil property di objek lagi
+      // jika ada nested objek bagian address nya tidak bisa di panggil lagi dan untuk memanggil nya kita bisa langsung memanggil property address
+      //   nya langsung yang di atas di destructuring
+      {
+        function displayPerson({ firstName, middleName, lastName }) {
+          console.info(firstName);
+          console.info(middleName);
+          console.info(lastName);
+        }
+
+        const person = {
+          firstName: "Eko",
+          middleName: "Kurniawan",
+          lastName: "Khannedy",
+        };
+
+        displayPerson(person);
+        // diatas destructuring pada sebuah parameter function
+        // dimana di bawah function yang sudah di buat
+        // kita membuat objek const person dengan nama property yang sama dengan parameter nya
+        // di sisi lain, bagian parameter ketika menulis parameter ditulis di dalam kurung kurawal
+        // ketika memanggil function nya kita memasukan objek nya ke dalam parameter nya..
+      }
+
+      {
+        function sum([first, second]) {
+          return first + second;
+        }
+
+        console.info(sum([1, 1]));
+        console.info(sum([10, 10]));
+      }
+      //   nah kalo di atas parameter nya array
+
+      {
+        const names = ["Eko", "Budi", "Joko"];
+        const [firstName, middleName = "Kurniawan", lastName = "Khannedy"] = names;
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+      //   diatas destructuring menggunakan default value, dimana di array ada eko, budi dan joko
+      //   lalu di destructuring dengan firstname yang akan mengambil index 0, kemudian ada middlename yang sudah ada defautl value nya
+      // begitu juga dengan lastName
+      //   ketika di panggil, jika tidak ada data nya, misal budi dan joko nya tidak ada maka yang di panggil default value nya,
+      //   tapi jika ada maka yang di array nya yang di panggil
+      {
+        const person = {
+          firstName: "Eko",
+          middleName: "Budi",
+          lastName: "Khannedy",
+        };
+
+        let { firstName, middleName = "Kurniawan", lastName } = person;
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+      }
+      //   begitu juga dengan objek yang di destructuring,
+      //   dimana jika ada data nya maka yang di panggil adalah yang sudah ada value nya
+      //   jika tidak ada maka defaultn value yang di panggil nya
+
+      {
+        const person = {
+          firstName: "Eko",
+          middleName: "Budi",
+          lastName: "Khannedy",
+        };
+
+        let { firstName: namaDepan, middleName: namaTengah = "Kurniawan", lastName: namaBelakang } = person;
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+      }
+      //   destructuring menggunakan variable lainya, dimana contoh middleName merupakan property
+      //   dengan : namaTengah mksd nya property middlename di masukan ke dalam variabel nama tengah yang value nya kurniawan
+    </script>
+  </body>
+</html>

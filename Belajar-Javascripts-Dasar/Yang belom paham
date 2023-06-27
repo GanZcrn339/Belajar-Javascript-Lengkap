@@ -1,0 +1,12 @@
+1.Label
+2.(SOLVED)function return value, belum paham di bagian parameter kedua dari function isContains, bukan nya parameter itu nama nya terserah kita
+ tapi pas diganti nama parameter kedua dari function nya yaitu searchValue, malah kode nya tidak berjalan?
+JAWABAN:
+Ternyata nama parameter memang terserah kita, hal yang membuat kode nya error atau tidak berjalan, kareana nama parameter sebeleum nya yaitu searchValue
+masih di gunakan di dalam block function nya atau dipanggil disana di bagian program if dibagian kondisi nya, kode akan berjalan normal
+ketika nama parameter nya sama dengan bagian kondisi di if, sedangkan kasus di atas nama parameter nya berbeda jadi error...
+3. function generator
+4. arrow function bagian arrow function yang dijadikan parameter
+belom terlalu paham yang mana materi tersebut berkaitan dengan anonymous function
+5. Closure (Solved sudah paham)
+6.Getter dan setter belom terlalu paham

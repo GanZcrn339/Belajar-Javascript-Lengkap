@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Default Class</title>
+  </head>
+  <body>
+    <script type="module">
+      import { default as Person } from "./scripts/default-class.js";
+      // nah di atas karena default kita bisa ngasih nama pake as
+      const person = new Person("Eko");
+      person.sayHi();
+      //   cara pemanggilan nya sama aja dengan nama as nya
+    </script>
+  </body>
+</html>

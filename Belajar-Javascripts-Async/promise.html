@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>Name :</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>Price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function getProduct(product) {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", `api/${product}.json`);
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Error Get Product with response : ${ajax.status}`);
+            }
+          };
+          ajax.send();
+        });
+        // di atas adalah cara menggunakan promise dengan ajax
+        // dimana promise memiliki state resolve dan reject yang merupakan function juga
+        // resolve berfungsi mengambil value sedangkan rejected berfungsi mengambil error
+        // setelah di send ajax nya bisa diliat di network
+      }
+
+      getProduct("product") //disamping kita panggil function getProduct yang isi nya ada promise dan ajax yang mana kita isi param nya dengan nama file json di folder api
+        .then(function (response) {
+          return JSON.parse(response); //nah jika sukses bagian resolve nya kita konversi ke json yang tadi nya text
+        })
+        .then(function (json) {
+          document.getElementById("id").textContent = json.id;
+          document.getElementById("name").textContent = json.name;
+          document.getElementById("price").textContent = json.price;
+        })
+        // nah then berfungsi untuk mendapatkan atau mengubah data di document
+        // ketika promise nya sukses
+        .catch(function (error) {
+          document.getElementById("id").textContent = error;
+          document.getElementById("name").textContent = error;
+          document.getElementById("price").textContent = error;
+        })
+        // catch berfungsi untuk mendapatkan data error di tampilan document seperti di atas
+        .finally(function () {
+          console.info("Finally");
+        });
+      //. finaly akan terus di jalankan walaupun promise nya sukses dan error
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax Send File</title>
+  </head>
+  <body>
+    <h1>Register</h1>
+    <form>
+      <label for="username"
+        >Username:
+        <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="name"
+        >Name:
+        <input type="text" id="name" name="name" />
+      </label>
+      <br />
+      <label for="profile"
+        >Profile:
+        <input type="file" id="profile" name="profile" />
+      </label>
+      <br />
+      <input type="button" id="register" value="Register" />
+    </form>
+    <h1 id="response"></h1>
+    <script>
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "https://padjar.free.beeceptor.com");
+        ajax.onload = function () {
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+        // kita buat function ajax seperti sebelum sebelumnya dan kita
+        // gunakan method post lalu buat onload
+
+        const form = new FormData(); //untuk mengirim file kita bisa gunakan class FormData
+        form.append("username", document.getElementById("username").value);
+        form.append("name", document.getElementById("name").value);
+        // kita ambil input username dan name nya dan tambahkan ke var form
+
+        const files = document.getElementById("profile").files;
+        // untuk bagian input file kita ambil dan masukan ke var files
+        const firstFile = files.item(0);
+        // dan untuk mengambil item pertama nya kita tinggal tambahkan seperti di atas
+
+        form.append("profile", firstFile);
+        // lalu tambahkan di var form
+
+        ajax.send(form);
+        // kemudian send
+      }
+
+      document.getElementById("register").onclick = doLogin;
+      //   jangan lupa button nya kasih function nya
+    </script>
+  </body>
+</html>

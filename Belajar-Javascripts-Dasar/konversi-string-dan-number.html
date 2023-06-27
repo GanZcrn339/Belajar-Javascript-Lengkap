@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Konversi String dan Number</title>
+  </head>
+  <body>
+    <script>
+      const value1 = parseInt("1"); //parseint adalah function untuk konversi string ke number dalam bilangan bulat
+      const value2 = 1;
+      //   kita buat var constan dengan nama value 1 dan 2, dimana value1 berisi parseint untuk mngekonversi string angka 1 ke number
+      //   , lalu value2 hanya berisi number
+      const sum = value1 + value2;
+      //   kita buat operasi mtk + dengan menambahkan value1 dan value2 lalu kita masukan ke cont sum
+      // hasil nya = 2, tapi jika tidak di konversi terlebih dahulu maka hasil nya akan menjadi 11 dimana
+      // value2 yang merupakan number akan di anggap sebagai string..
+
+      document.writeln(`<p>${sum}</p>`);
+      //   kita tampilkan di layar menggunakan string template sebagai paragraf
+
+      document.writeln(`<p>${parseInt("1.9")}</p>`);
+      //   nah jika parseint nya kita isi dengan tanda koma ,/(.(titik)) yang mana akan menjadi floating point
+      // maka jika menggunkan parseint yang berfungsi mengkonversi string ke number dalam bentuk bilangan
+      // bulat maka akan di bulatkan ke bawah hasilnya
+      // jadi di atas hasilnya = 1
+      document.writeln(`<p>${parseFloat("1.1")}</p>`); //parse float mengkonversi dari string ke number dalam bilangan bulat
+      document.writeln(`<p>${Number("1.1")}</p>`); //Menkonversi dari string ke number dalam bentuk bilangan bulat atau pecahan
+
+      const a = 1;
+      const b = 1;
+      const total = a.toString() + b.toString(); //.toString mengkonversi number ke string
+      document.writeln(`<p>${total}</p>`);
+      //   nah di atas hampir sama ada dua variabel number dengan isi nya angka 1
+      //   di bawah nya , ada const total untuk menjumlahkan kedua variabel di atas
+      //   tapi menggunakan .toString dimana kedua variabel tadi akan menjadi string yang asalnya number
+      // dan hasilnya akan menjadi 11 bukan 2 karena string..
+
+      document.writeln(`<p>${parseInt("1salah")}</p>`);
+      //   nah jika parseint di inputkan dengan huruf/char maka akan di anggap NaN(Not a Number) jika
+      //   char nya di tambahkan di depan contoh : "salah1" tapi jika setelah number nya masih di tolerir
+      //   hasilnya akan jadi 1 dan salah nya tidak di anggap ketika di tampilkan
+      document.writeln(`<p>${parseFloat("1.1eko")}</p>`);
+      // begitu juga dengan parsefloat
+      document.writeln(`<p>${Number("1salah")}</p>`);
+      //   kalo number tidak mentolerir jika ada char maupun di depan atau di belakang number nya
+      //   output nya akan jadi NaN
+      document.writeln(`<p>${Number("1.1eko")}</p>`);
+      document.writeln(`<p>${Number("salah")}</p>`);
+
+      const first = Number("salah"); // NaN
+      const totalNumber = first + 100;
+      document.writeln(`<p>${totalNumber}</p>`);
+      //   jika salah satu var NaN maka tidak bisa menjadi apapun walaupun di operasi kan
+      //   hasilnya tetap NaN seperti di atas
+
+      document.writeln(`<p>${isNaN(first)}</p>`);
+      //   dengan function isNaN kita bisa mengetahui/mengecek const first yang isi nya input yang salah yaitu harus nya stirng(number) ke number
+      // maka hasilnya akan boolean (true) karena var first memang berisi NaN
+      document.writeln(`<p>${isNaN(100)}</p>`);
+      //   tapi jilka di isi dengan number maka hasilnya akan false karena memang bukan NaN
+      document.writeln(`<p>${isNaN(NaN)}</p>`);
+      //   function isNaN bisa langsung di input NaN yang hasilnya pasti NaN
+    </script>
+  </body>
+</html>

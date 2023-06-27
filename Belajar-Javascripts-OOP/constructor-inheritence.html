@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Constructor Inheritance</title>
+    <!-- kita bisa mengcopy constructor lainya -->
+  </head>
+  <body>
+    <script>
+      function Employee(firstName) {
+        this.firstName = firstName;
+        this.sayHello = function (name) {
+          console.info(`Hello ${name}, My name is ${this.firstName}`);
+        };
+      }
+      //   kita buat sebuah constructor
+
+      function Manager(firstName, lastName) {
+        this.lastName = lastName;
+        Employee.call(this, firstName);
+        // nah constructor pertama yaitu Employe bisa kita gunakan
+        // property nya di constructor yang lain dengan menuliskan nama const nya diikuti .call lalu (this, namaparameter nya)
+      }
+      //   walaupun di panggil setelah property lastname tapi ketika di isi nanti akan sesuai
+      // dengan posisi parameter yaitu firstName dulu baru lastName
+
+      const eko = new Manager("Eko", "Khanedy");
+      //   kita input parameter di const manager dan masukan ke dalam var
+      console.info(eko);
+      //   kita panggil var nya
+    </script>
+  </body>
+</html>

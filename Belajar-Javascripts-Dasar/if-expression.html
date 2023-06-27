@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>If Expression</title>
+  </head>
+  <body>
+    <script>
+      const examValue = 50;
+      //   kita buat const yang nanti digunakan dalam pengkondisian atau diisikan di dalam
+      //   properti dari if
+
+      if (examValue > 80) {
+        //   kita buat if dimana properti nya diisi dengan const examValue = 50
+        // lalu di operasikan dengan perbandingan lebih besar dari 80
+        document.writeln("<p>Good Job : A</p>");
+        // jika examValue lebih besar dari 80 (True) maka tampilkan di layar paragraf Good Job: A
+        // jika tidak(false) maka tampilkan else if di bawah ini
+      } else if (examValue > 70) {
+        document.writeln("<p>Good Job : B</p>");
+      } else if (examValue > 60) {
+        document.writeln("<p>Good Job : C</p>");
+      }
+      //   jika if dan else if di atas tidak memenuhi syarat artinya semua nya false maka
+      // tampilkan paragraf di bawah ini
+      else {
+        document.writeln("<p>Try Again Next Year</p>");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Variable Module</title>
+    <!-- kelemahan js biasa jika ada dua var dengan nama yg sama
+    var pertama bisa di replcae oleh var kedua, hal terserbut bisa di atasi dengan module -->
+  </head>
+  <body>
+    <script type="module">
+      import { name } from "./scripts/variable.js";
+      //   import { name } from "./scripts/variable2.js";
+
+      console.info(name);
+    </script>
+  </body>
+</html>

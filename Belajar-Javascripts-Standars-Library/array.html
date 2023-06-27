@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array</title>
+    <!-- disini kita akan bahas instance method untuk array terutama mengenai penambahan dan penghapusan data -->
+  </head>
+  <body>
+    <script>
+      {
+        // array loop
+        const array = ["Eko", "Kurnniawan", "Khannedy"];
+        // kita buat sebuah array
+
+        array.forEach(function (value, index) {
+          console.info(`${index} : ${value}`);
+        });
+        // nah kita bisa menggunakan method forEach untuk membuat sebuah perulangan
+        // dimana kita buat anonymous function yang berisi param value dan index yang mana
+        // param tersebut sudah terisi dengan const array
+        // lalu kita tampilkan perulangan nya di konsol sesuai index dan value nya
+
+        array.forEach((value, index) => console.info(`${index} : ${value}`));
+        // bisa juga menggunakan arrow function seperti di atas
+
+        array.forEach((value) => console.info(value));
+        // kalo ini cuman value nya
+      }
+
+      {
+        // array queue
+        // sebuah method untuk menghapus/mengambil data di array dengan posisi paling depan
+        // menggunakan method shift
+        // dan push untuk menambahkan data dengan posisi array yang paling belakang
+
+        const queue = [];
+
+        queue.push("Eko");
+        queue.push("Kurniawan");
+        queue.push("Khannedy");
+        // menambahkan data array queue pada posisi paling belakang
+
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift()); //kalo yang ke empat ini hasilnya akan undefined karena sudah di ambil semua data nya
+        // kalo ini mengambil/menghapus yang paling depan
+      }
+
+      {
+        // array stack
+        // seperti queue tapi ini di ibaratkan seperti tumpukan kartu
+        // dimana ketika kita menambahkan nya kita menambahkan nya di paling belakang(sama seperti queue)
+        // tapi ketika kita akan mengambil atau menghapus data nya kita akan mengambil/menghapus yang paling belakang juga
+
+        const stack = [];
+
+        stack.push("Eko");
+        stack.push("Kurniawan");
+        stack.push("Khannedy");
+        // untuk menambahkan sama seperti queue menggunakan push
+
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop()); //yang terakhir tetep undefined
+        // untuk mengambil data paling belakang menggunakan pop
+      }
+
+      {
+        // array search
+        // untuk melakukan pencarian di dalam array
+
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.info(source.find((value) => value > 3)); //ini return nya value
+        // find untuk mencari sebuah value dari sebuah array
+        // diatas find memiliki param yang merupakan value dari source(array nya) lalu kita menggunakan arrow function
+        // yang isi nya merupakan block function sebuah kondisi
+        // return nya adalah angka pertama dari kondisi nya
+        // di atas kondisi nya value lebih dari 3, maka akan mencari value yang lebih dari 3 yaitu 4 dan 5
+        // tapi yang akan di ambil hanya angka 4 saja yang merupakan angka lebih dari 3 pertama
+        console.info(source.findIndex((value) => value > 3)); //ini return nya number index
+        // ini juga sama seperti di atas tapi nyari nya index nya bukan value nya
+        // jadi di atas kan kondisi nya value lebih dari 3 yaitu 4
+        //  sebelum 4 ada value 1 (index ke-0) 2 (index ke-1) dan 3 (index ke 2) lalu 4 (index ke-3)
+        // nah yang di ambil index dari value lebih dari 3 pertama yaitu value 4 yang berindex 3
+        // maka return nya 3
+        console.info(source.includes(7)); //ini return nya boolean
+        // kalo ini untuk mencari sebuah data di array nya apakah data tersebut ada di array atau tidak
+        console.info(source.indexOf(5)); //ini return nya number
+        // ini untuk mencari index dari angka yang dimasukan,
+        // diatas yang di cari angka 5, di array nya angka 5 pertama merupakan
+        // angka yang berindex ke 4 maka return nya 4
+        console.info(source.lastIndexOf(5)); //ini return nya number
+        // kalo ini sama tapi nyari index nya yang paling terakhir, seperti angka 5 yang selain ada
+        // di index ke 4 ada juga di index ke 9 maka return nya 9
+      }
+
+      {
+        // array filter
+        // nah ini untuk memfilter array yang sesuai kondisi nya
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const ganjil = numbers.filter((value) => value % 2 === 1);
+        // cara memfilter nya menggunakan method .filter
+        // yang ada sebuah param nya, di atas param nya di isi dengan value dari array nya si numbers
+        // lalu menggunakan arrow function dimana block nya adalah sebuah kondisi dimana value
+        // yang modolus 2 identik 1 maka akan di tampilkan, jika tidak sesuai kondisi maka tidak akan di tampilkan
+        // return nya adalah array baru, di atas akan menghasilkan seluruh angka sesuai kondisi..
+        // hasil nya [1,3,5,7,9] yang merupakan angka yang kalo di bagi 2 sisa 1
+        // kemudian di masukan kembali ke dalam var constan
+        const genap = numbers.filter((value) => value % 2 === 0);
+        // ini juga sama tapi yang di gilter adalah angka genap atau yang di bagi 2 disisa 0
+
+        console.info(numbers);
+        console.info(ganjil);
+        console.info(genap);
+        // baru kita tampilkan
+      }
+
+      {
+        // array transform
+        // kalo ini untuk melakukan transformasi di array
+
+        const names = ["Eko", "Kurniawan", "Khannedy"];
+        const namesUpper = names.map((value) => value.toUpperCase());
+        // method map berfungsi untuk melakukan transform tiap value dan menghasilkan array baru
+        // dimana .map memiliki param di atas di isi dengan value dari array string lalu arrow function
+        // yang isi block nya adalah kondisi yang di inginkan untuk setiap value
+        // di atas kondisi nya ingin membuat seluruh value dari array string huruf besar semua menggunakan uppercase
+        // kemudian kita masukan ke dalam var const yang jadi array baru
+        console.info(namesUpper);
+        // kita tampilkan
+
+        const namesReduce = names.reduce((before, value) => before + " " + value);
+        // nah reduce bisa digunakan juga untuk array string dimana di atas before nya di tambah dengan
+        // string spasi untuk memisahkan antar array kemudian di tambah dengan value
+        // yang hasil nya adalah sebuah string yang dimasukan ke dalam var namesReduce
+        console.info(namesReduce);
+        // lalu kita panggil
+
+        const namesRight = names.reduceRight((before, value) => before + " " + value);
+        console.info(namesRight);
+        // ini juga sama tapi reduceRight dari value array kanan ke kiri
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const total = numbers.reduce((before, value) => before + value);
+        //  dengan reduce kita bisa melakukan transfirm dengan value array dan value selanjutnya
+        // di atas method reduce param nya di isi dengan before yaitu array pertama dari kiri
+        // dan merupakan simpanan dari hasil kondisi method nya, lalu kedua ada value yang merupakan
+        // diambil dimulai dari array index pertama atau di atas angka 2
+        // kemudian arrow function dengan kondisi nya yang di atas di beri operasi dimana param before di tambah dengan value
+        // seperti ini before pertama = 1 + value pertama = 2 =3, 3 ini di simpan kembali di before
+        // lalu operasi di lakukan ulang hingga array nya habis
+        // di atas hingga hasil nya = 55
+        console.info(total);
+        // kita tampilkan
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Continue</title>
+  </head>
+  <body>
+    <script>
+      for (
+        let i = 1;
+        i <= 100;
+        i++ /*
+        Kita buat var i sebagai init statement, lalu di beri kondisi dimana jika
+        i kurang dari sama dengan 100 maka jalankan program nya
+    */
+      ) {
+        if (i % 2 === 0) {
+          //di program ada kondisi if, dimana jika nilai dari i modulus 2 identik 0
+          //   maka akan di continue/diskip dan langsung mengincrement kondisi perulangan nya
+          //   lalu menjalankan program nya lagi, dengan kata lain hanya angka ganjil yang akan di tampilkan
+
+          continue;
+        }
+        document.writeln(`<p>Perulangan Ganjil ${i}</p>`);
+        // nah jika di continue atau di skip tidakl akan di tampilkan dan akan langsung mengincement var di kondisi
+        // lalu menjalankan lagi program perulangan nya, dimana di dalam perulangan nya ada pengecekan
+        // kondisi lagi menggunakan if
+      }
+    </script>
+  </body>
+</html>

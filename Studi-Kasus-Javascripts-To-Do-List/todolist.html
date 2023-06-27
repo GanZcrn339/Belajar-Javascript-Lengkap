@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Todolist</title>
+  </head>
+  <body>
+    <form name="todoForm">
+      <!-- Table input To do list -->
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="todo">Todo:</label></td>
+            <td><input type="text" id="todo" name="todo" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Add" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+    <!-- table menampilkan todolist dan search Todolist -->
+
+    <h1>Todolist</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Search:</th>
+          <th><input type="text" name="search" id="search" /></th>
+        </tr>
+      </thead>
+      <tbody id="todolistBody">
+        <tr>
+          <td><input type="button" /></td>
+          <td>Todo Description</td>
+          <!-- bagian todo Dexcription otomatis terhapus karena ada function cleartodolist -->
+        </tr>
+        <!-- Display Todolist menampilkan kode di bawah
+            <tr>
+                <tdButton><input disini button done nya></tdButton> <tdTodo>tampilan todolist</tdTodo>
+            </tr>
+
+
+
+
+
+
+         -->
+      </tbody>
+    </table>
+
+    <script>
+      const todolist = ["Belajar JavaScript Dasar", "Belajar JavaScript Object Oriented Programming", "Belajar JavaScript Document Object Model"];
+      // diatas adalah array yang sudah ada default nya
+
+      // Menambah Todolist (PAHAM)
+
+      document.forms["todoForm"].onsubmit = function (event) {
+        event.preventDefault();
+        // 1. di atas kita preventDefault dulu supaya tidak refresh otomatis
+        const todo = document.forms["todoForm"]["todo"].value; //bagian ini belum terlalu paham
+        todolist.push(todo);
+        // kemudian ketika kita isi input todo di table todoForm value nya
+        // maka kita push isi input todo nya ke const variable todolist yang berbentuk array
+
+        document.forms["todoForm"].reset();
+        // lalu kita reset supaya kita bisa melakukan kode ini lagi
+
+        console.info(todolist);
+        // kita cek di konsol dulu apakah kode nya sudah berhasil
+        displayTodolist();
+        // kita tambahkan function displayTodolist
+        // untuk menampilkan isi input yang sudah di add
+      };
+
+      //   DIBAWAH FUNCTION CLEAR TODOLIST (PAHAM)
+      //   function clearTodolist di bawah berfungsi untuk menghapus tampilan todolist
+      //  pertama atau firstchild dari element todolistBody
+      // jika tidak di hapus maka array yang sebelumnya akan ikut tertulis
+      // contoh kita menginput eko
+      // maka di tampilkan eko di todo list nya
+      // kemudian kita input todo list lagi misal kurniawan
+      // maka hasilnya bukan seperti ini:
+      // eko
+      // kurniawan
+      // tapi seperti ini
+      // eko
+      // eko kurniawan
+      //   jadi bagian clearTodolist berfungsi untuk menghapus child dari todolistbody
+      // selagi masih ada child nya maka akan di hapus
+      function clearTodolist() {
+        const todolistBody = document.getElementById("todolistBody");
+        while (todolistBody.firstChild) {
+          todolistBody.removeChild(todolistBody.firstChild);
+        }
+      }
+      // FUNCTION REMOVE TODOLIST (PAHAM)
+      function removeTodoList(index) {
+        todolist.splice(index, 1);
+        // splice untuk menghapus todolist nya dimana param nya di isi index array dan berapa yang di hapus dalam 1 klik di atas hanya 1 yg di hapus
+        displayTodolist();
+        // setelah di hapus kita harus display lagi todolist nya
+      }
+
+      // FUNCTION MENAMBAHKAN TAMPILAN TODOLIST (PAHAM)
+      //   di bawah function yang berfungsi menangkap inputan dari submit dan menampilkan nya
+      function addTodoList(index, todo) {
+        const tr = document.createElement("tr");
+        const tdButton = document.createElement("td");
+        tr.appendChild(tdButton);
+        // tdbutton nya kita masukin ke dalam tr sebagai child pertama
+
+        const buttonDone = document.createElement("input");
+        buttonDone.type = "button";
+        buttonDone.value = "Delete";
+        // disini kita buat button dengan input
+        buttonDone.onclick = function () {
+          removeTodoList(index);
+        };
+        // button tersebut memiliki function untuk menghapus todolist nya berdasarkan index nya
+        tdButton.appendChild(buttonDone);
+        // lalu di tambahkan sebagai child di tdButton
+
+        const tdTodo = document.createElement("td");
+        tdTodo.textContent = todo; //todo disini merupakan const todo yang berisi value array todolist[i]
+        tr.appendChild(tdTodo);
+        // kita tambahkan tdTodo ke tr sebagai child kedua
+
+        const todolistBody = document.getElementById("todolistBody");
+        todolistBody.appendChild(tr);
+        // nah disini kita panggil todolistbody dan kita tambahkan si tr tadi yang ada child nya yaitu tdbutton dan tdTodo
+      }
+
+      // KODE MENAMBAH INPUT SEARCH (SUDAH PAHAM)
+
+      //   dibawah adalah kode untuk input search atau filter nya
+      const searchInput = document.getElementById("search");
+      //   kita get input search
+      searchInput.onkeyup = function () {
+        displayTodolist();
+      };
+      searchInput.onkeydown = function () {
+        displayTodolist();
+      };
+      //   onkeydown berfungsi ketika kita click keyboard kita artinya kan keteken tuh yang mana bakalan
+      // kebawah lah nah itu keydown sedangkan key up ketika jari kita mengangkat key dari keyboard yang sedang di tekan
+      //   kita gunakan event handler onkeydown and onkeyup dan tampilkan todolist nya
+      // jadi setiap input filter nya kita ketikan, maka akan tampil display todo nya dengan keyword yang sesuai dengan nama todo nya
+
+      // FUNCTION UNTUK MENAMPILKAN TODOLIST NYA
+      //   dibawah function untuk menampilkan todolist nya beserta dengan serach nya
+      function displayTodolist() {
+        clearTodolist();
+        // untuk menambahkan kita perlu mengclear atau menghapus html awal nya dulu
+        // di atas bagian tr beserta child nya di hapus terlebih dahulu
+        // jika tidak menggunakan clear todolist yang sudah ditambahkan sebelumnya akan di tambahkan lagi jadi double
+        // contoh : - anime
+        //            :  - game
+        // lalu kita tambahkan -film dan - komik
+        // harus nya seperti ini kan :
+        //  -anime
+        //  - game
+        //   - film
+        //   - komik
+        // tapi jika tidak menggunakan clear todolist akan jadi seperti ini:
+        //  Todo Description
+        // - anime
+        // - game
+        //  - anime
+        //  - game
+        //  - film
+        // - komik
+
+        for (let i = 0; i < todolist.length; i++) {
+          const todo = todolist[i];
+
+          const searchText = document.getElementById("search").value.toLowerCase();
+          //   kita ambil element input ber id search dan value nya yang lowercase ke dalam const searchText
+
+          if (todo.toLowerCase().includes(searchText)) {
+            addTodoList(i, todo);
+          }
+          // nah kemudian perulangan nya aktif dimana akan menampilkan array nya
+          // dalam bentuk list ke bawah
+        }
+        // kita beri kondisi dimana kondisi nya menerima todo yaitu array todolist yang lowercase dan terdapat value dari search yang lowercase juga
+        //  kita panggil addTodoList yang akan menampilkan todolist sesuai kondisi di atas
+      }
+
+      displayTodolist();
+      //   tampilkan todolist nya
+    </script>
+  </body>
+</html>

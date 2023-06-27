@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function sebagai Value</title>
+  </head>
+  <body>
+    <script>
+      function sayHello(name) {
+        document.writeln(`<p>Hello ${name}</p>`);
+      }
+
+      sayHello("Eko");
+
+      const say = sayHello;
+      //   function bisa di pakai sebagai value seperti sayHello diatas
+
+      say("Budi");
+      //   nah jadi kita panggil variable yang menampung function nya saja dengan parameter nya
+      // dengan kata lain nama function nya berubah/di ubah dan variabel nya otomatis berubah menjadi function
+
+      function giveMeName(callback) {
+        callback("padjar"); // seolah olah memanggil sayHello("Eko");
+        // anjing!!! jadi nama nya ganti dari callback("padjar") jadi sayHello("Padjar")
+      }
+      //   nah di atas function nya kita pake di parameter
+      // mksd nya kita anggap saja callback sebagai function lalu di block function nya
+      // kita panggil function callback dengan string eko
+
+      giveMeName(sayHello);
+      //   kemudian kita masukan function sayHello di atas yang sudah ada fungsinya sendiri
+      // yang mana hasilnya akan menjadi "eko" jadi parameter callback di isi dengan fucntion sayHello
+      // ketika kita panggil function giveMeName
+      giveMeName(say); // giveMeName(sayHello)
+      //   nah bisa juga kita panggil giveMeName nya dengan di isi parameter nya dengan say
+      // yang berisi function sayHello sama aja sih
+      //   hasil akhir nya adalah "padjar"
+    </script>
+  </body>
+</html>

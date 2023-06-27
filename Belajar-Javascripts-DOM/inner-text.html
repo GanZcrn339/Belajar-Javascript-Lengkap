@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inner Text</title>
+  </head>
+  <body>
+    <p id="content">
+      <script>
+        console.info("Hello World");
+      </script>
+      <b>Eko</b> Kurniawan <i>Khannedy</i>
+    </p>
+
+    <script>
+      const content = document.getElementById("content");
+      console.info(content.textContent); //text content akan muncul script dan text nya
+      console.info(content.innerText); //kalo inner text hanya text nya saja yaitu eko kurniawan kennedy
+      console.info(content.innerHTML); //kalo inner html semua element p termasuk bagian script nya juga ikut di tampilkan
+    </script>
+  </body>
+</html>

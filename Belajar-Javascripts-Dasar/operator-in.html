@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator In</title>
+    <!-- operator yang di gunakan apakah sebuah properti ada di dalam objek atau tidak (output nya boolean) -->
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Eko",
+        lastName: "Khannedy",
+      };
+
+      if ("firstName" in person) {
+        // contoh pemakaian nya seperti di atas
+        // jika index firstname = "eko" ada di object person
+        // maka tampilkan alert di bawah
+        alert(`Hello ${person.firstName}`);
+      } else {
+        alert("Hello");
+      }
+
+      const student = {
+        firstName: "Eko",
+        middleName: undefined,
+        lastName: "Khannedy",
+      };
+
+      if ("middleName" in student) {
+        alert(`Hello ${student.middleName}`);
+      } else {
+        alert("Hello Student");
+      }
+      //   diatas juga sama tapi yang di tanyakan objek yang index pertama nya (middlename) berisi undefined
+      //   jadi walaupun undefined atau null akan tetap di anggap ada
+
+      const names = [null, "Kurniawan", null];
+      const result = 0 in names;
+      document.writeln(`<p>${result}</p>`);
+      //   in juga bisa di gunakan di array
+      // kita buat array names
+      // lalu kita buat var result dimana isi nya apakah 0 ada di array names
+      //   kita tampilkan deh yang mana output nya akan boolean(true)
+      // karena di array ada null yang sama dengan 0
+    </script>
+  </body>
+</html>

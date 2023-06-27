@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Break</title>
+  </head>
+  <body>
+    <script>
+      let counter = 1;
+      //   kita buat var
+
+      while (true) {
+        //kita buat perulangan while dimana kondisi nya selalu true artinya akan terus menjalankan program di bawah nya
+        document.writeln(`<p>Perulangan ke-${counter}</p>`);
+        counter++;
+        // selama kondisi nya true maka akan menampilkan var counter yang terus di increment
+
+        if (counter > 10) {
+          // jika var counter lebih dari 10 maka jalankan program di bawah dimana program nya adalah break
+          break;
+        }
+        // ketika program if di atas di jalankan, maka program sebelum nya yaitu menampilkan var counter yang di increment
+        // akan berhenti ketika var counter lebih dari 10
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Popup Confirm</title>
+  </head>
+  <body>
+    <script>
+      const masuk = confirm("Anda yakin mau masuk?");
+      //   kalo confirm input nya boolean
+      //   nah nanti akan muncul di browser pilihan oke atau cancel
+      //   jika ok maka akan masuk ke operasi nya
+
+      if (masuk) {
+        const name = prompt("Siapa Nama Anda?");
+        alert(`Hello ${name}`);
+      } else {
+        alert("Bye bye");
+      }
+      //   bisa pake if else expression untu menampilkan hasil input nya atau output nya lewat alert
+    </script>
+  </body>
+</html>

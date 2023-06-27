@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tipe Data Object</title>
+  </head>
+  <body>
+    <script>
+      const orang = {
+        "nama lengkap": "Eko Kurniawan",
+        // untuk menamai index dengan 2 kata harus pake string
+        alamat: "Indonesia",
+        umur: 30,
+        // jika satu saja seperti alamat dan umur di atas tidak perlu menggunakan string
+      };
+      //   nah di atas adalah cara membuat object dengan lansgung memasukan index dan properti nya
+
+      // "Nama Lengkap", alamat, umur disebut sebagai atribute atau properti yang bisa
+      //   dibayangkan sebagai index tapi tidak menggunakan nomer/angka
+      //    yang mana bisa kita isi properti nya sesuai dengan yang kita inginkan seperti di atas
+      //   isi dari properti di sebut value
+
+      // ubah/menambahkan property
+      // person["nama"] = "Eko Kurniawan";
+      // person["alamat"] = "Indonesia";
+      // person["umur"] = 30;
+      //   berarti kalo di atas nama nya sesuain dengan const nya yaitu orang
+
+      console.info(`Nama : ${orang["nama lengkap"]}`);
+      // untuk yang dua kata seperti diatas pemanggilan nya harus menggunakan []
+      console.info(`Alamat : ${orang.alamat}`);
+      console.info(`Umur : ${orang.umur}`);
+      //   cara menampilkan nya di console bisa seperti di atas dengan menuliskan nama array nya diikuti nama properti nya
+
+      console.table(orang);
+
+      delete orang["umur"];
+      //   ini cara menghapus properti
+
+      console.table(orang);
+    </script>
+  </body>
+</html>

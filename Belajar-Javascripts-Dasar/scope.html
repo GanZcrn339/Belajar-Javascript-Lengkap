@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <script>
+      // global scope
+      let counter = 0;
+
+      // global scope
+      function hitMe() {
+        // local scope hitMe
+        counter++;
+      }
+      //   global scope artinya var counter di atas bisa di akses atau di masukan ke dalam block function
+      // yang merupakan bagian local scope
+
+      // global scope
+      function other() {
+        // local scope other
+      }
+
+      hitMe();
+      hitMe();
+      //   lalu bisa kita panggil function nya
+
+      console.info(counter);
+      //   kemudian tampilkan di console, dimana counter akan di increment
+
+      function first() {
+        // local scope first
+        let firstVariable = "First";
+
+        function firstNested() {
+          console.info(firstVariable); //kalo nested function masih bisa mengakses var asalkan local scope parent nya masih sama
+          const firstNestedVariable = "First Nested";
+        }
+
+        firstNested();
+        console.info(firstNestedVariable); // nah tapi var di dalam nested function tidak
+        // dapat di akses dari luar block function nya karena di anggap mengakses local dari global
+        // walaupun memiliki parent yang sama
+      }
+
+      function second() {
+        // local scope second
+        let secondVariable = "Second";
+        // console.info(firstVariable); // nah begini juga akan error,
+        // jadi local scope yang berbeda function akan error walaupun sama sama di akses di local scope
+      }
+
+      first();
+      second();
+
+      // global scope
+      // console.info(firstVariable); // ERROR karena firstVariable merupakan variabel
+      //   yang berada di locak scope dari function first, dimana tidak bisa di akses global scope
+      // console.info(secondVariable); // begitu juga dengan ini akan error karena di dalam local scope function second
+    </script>
+  </body>
+</html>

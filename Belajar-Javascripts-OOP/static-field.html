@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Static Field</title>
+  </head>
+  <body>
+    <script>
+      class Configuration {
+        static name = "Belajar JavaScript OOP";
+        static version = 1.0;
+        static author = "Eko Kurniawan";
+      }
+
+      const config = new Configuration();
+      console.info(config);
+      //   nah jika menggunakan static property maka jika object nya di akses
+      // tidak akan menjadi intance dari object nya, jadi jika menggunakan
+      //   static, maka property nya akan menjadi milik si class itu sendiri
+
+      Configuration.author = "Eko Khannedy";
+      //   cara mengubah nya bisa dengan langsung tulis nama class nya diikuti tanda . dan nama property nya
+
+      console.info(Configuration.name);
+      console.info(Configuration.version);
+      console.info(Configuration.author);
+      //   di atas cara memanggil nya
+      //   property tersebut jadi seperti var global bisa di akses di manapun
+    </script>
+  </body>
+</html>

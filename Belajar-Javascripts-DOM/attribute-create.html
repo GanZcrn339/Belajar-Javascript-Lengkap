@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attribute</title>
+  </head>
+  <body>
+    <img id="logo" alt="PZN Logo" />
+
+    <script>
+      const logo = document.getElementById("logo");
+      //   kita ambil dulu element nya berdasarkan id,
+      //  lalu masukan ke dalam var logo
+
+      // const src = document.createAttribute("src");
+      //   kita buat attribute dengan nama src
+      // lalu kita masukan ke dalam var src
+      // src.value = "https://www.programmerzamannow.com/img/pzn.png";
+      //   kita isi value attribute nya
+      // logo.setAttributeNode(src);
+      //   lalu kita set di element dengan id logo
+
+      logo.setAttribute("src", "https://www.programmerzamannow.com/img/pzn.png");
+      //   cara simple nya seperti di atas
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class Constructor</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(name) {
+          // kode apapun
+          console.info(`Membuat Person ${name}`);
+        }
+      }
+      // kita juga bisa menambahkan parameter dengan cara menambahkan
+      // kata kunci constructor yang berada di dalam class nya
+
+      const eko = new Person("Eko");
+      console.info(eko);
+      const budi = new Person("Budi");
+      //   pemanggilan nya seperti diatas, dengan memasukan nya ke dalam variabel
+      //   sudah bisa di tampilkan hasil nya di konsol
+    </script>
+  </body>
+</html>

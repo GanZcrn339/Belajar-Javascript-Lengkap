@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Rest Parameter</title>
+    <!-- 
+        - Rest Parameter hanya boleh ada satu di function
+        - hanya boleh berada di posisi paling akhir kecuali cuman ada satu parameter
+
+     -->
+  </head>
+  <body>
+    <script>
+      function sum(name, ...data) {
+        let total = 0;
+        for (const item of data) {
+          total += item;
+        }
+        document.writeln(`<p>Total ${name} is ${total}</p>`);
+      }
+      //   kita buat function sum yangb berisi parameter name dan rest parametr data
+      // dalam block function kita buat var total = 0
+      // lalu kita buat for of dimana parameter for of nya adalah memasukan parameter data ke var item(for of hanya mengambil value dari array atau object)
+      //   di dalam block for of nya kita tambahkan var total dengan array dari parameter data yang sudah dimasukan ke dalam var items karena merupakan for of
+      //   jadi bisa di lihat input di bawah yang sudah di input parameter nya
+      // contoh nya yang orance, yang mana array nya ada 5 index
+      // nah total kan = 0 di tambah 10 = 10
+      // lalu hasilnya di simpan di var total di atas yang mana sekarang menjadi 10
+      // lalu karena for atau perulangan program di atas di ulang lagi, jadi 10 +20= 30 di ulang sampai array nya habis
+      //   lalu di tampilkan dengan writeln
+      sum("Orance", 10, 20, 30, 40, 50, 60);
+      sum("Apple", 10, 20, 30, 40, 50, 60);
+      sum("Banana", 10, 20, 30, 40, 50, 60);
+
+      const values = [10, 10, 10, 10, 10]; //selain di isi langsung ketika function nya di panggil, kita juga bisa mengisi parameter nya dengan membuat variabel seperti ini terlebih dahulu
+      sum("Test", ...values); //yang mana var values di input di bagian rest parameter
+      //   hasil nya akan sama syarat nya ketika di input harus di ikuti titik tiga kali supaya dianggap rest parameter
+      //   jika tidak maka hasilnya jadi seperti yang tidak kita inginkan
+
+      function oldSum() {
+        let total = 0;
+        for (const argument of arguments) {
+          total += argument;
+        }
+        document.writeln(`<p>Total is ${total}</p>`);
+      }
+
+      oldSum(1, 2, 3, 4, 5);
+      //   nnah ini menggunakan argument objek yang tidak disarankan di updatean javascript sekarang ini
+      //   yang mana parameter function nya kosong, saat di dalam block function nya kita bisa menggunakan
+      //   arguments yang sudah otomatis ada sebagai ditur JS
+    </script>
+  </body>
+</html>

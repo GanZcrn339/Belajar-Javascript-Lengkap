@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set Interval</title>
+    <!-- set interval mirip dengan set time out tapi set interval akan
+    mengeksekusi kode nya secara terus terusan berdasarkan periode nya -->
+  </head>
+  <body>
+    <h1 id="header"></h1>
+    <script>
+      function setTime() {
+        const header = document.getElementById("header");
+        header.textContent = new Date().toString();
+      }
+      //   kita buat function diman mengambil element h1 dan di isi class waktu yang di convert ke string
+
+      setInterval(setTime, 1000);
+      //   kita gunakan set interval function setTime nya dengan periode 1 detik
+      // nanti function nya akan di panggil 1 detik sekali secara terus menerus
+      //   di atas kode nya kana menunjukan waktu jadi pas bagian detik nya
+      // akan terus jalan mksd nya terus jalan waktu nya yang seharus nya diam (statis)
+      console.info("Program Selesai");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Target</title>
+  </head>
+  <body>
+    <input id="clickMe" type="button" value="Click Me!" />
+    <!-- kita buat sebuah button dengan element input-->
+
+    <script>
+      const button = document.getElementById("clickMe");
+      //   kita ambil element nya by id dan masukan ke dalam var button
+      button.addEventListener("click", function () {
+        button.setAttribute("value", "You Already Click Me!");
+      });
+      //   kita tambahkan event handler yaitu event target addEventListener artinya tambahkan event
+      //   dalam param nya string pertama merupakan event nya contoh nya di atas click
+      // lalu kita tambhkan function untuk sett attribute nya dimana value yang tadi nya click me di ubah jadi you already click me
+      //jadi ketika di click value nya berubah
+
+      button.addEventListener("click", function () {
+        console.log("Button di Click");
+      });
+      //   nah di atas hampir sama tapi dibagian function nya menampilkan log di konsol ketika di click
+      //   addEventListener bisa lebih dari 1 handler seperti di atas maksimal 4
+    </script>
+  </body>
+</html>

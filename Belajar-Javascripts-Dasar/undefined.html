@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Undefined</title>
+  </head>
+  <body>
+    <script>
+      let name;
+      //   undefine adalah variabel yang  cuman di kasih nama var nya aja
+      //   berbeda dengan null kalo null variabel yang kosong atau belum di isi
+
+      //   untuk membuktikan nya kita bisa menggunakan if
+      if (name === undefined) {
+        //   jika var name identik dengan undefine maka tampilkan info undefine di konsol
+        console.info("UNDEFINED");
+        // seperti di atas
+      } else {
+        console.info("DEFINED");
+        // jika bukan undefines maka tampilkan info di atas
+      }
+
+      const names = ["Eko", "Kurniawan"];
+      //   berlaku juga untuk var bertipe array
+      if (names[2] === undefined) {
+        //   kita beri kondisi dimana jika index kedua dari name indentik dengan undefined
+        // (di atas cuman ada index0 dan 1 tidak lebih dari 1 jadi tidak ada index kedua)
+        console.info("ARRAY UNDEFINED");
+        // jika benar tampilkan consol di atas
+      }
+      //   jika salah tampilkan info di bawah
+      else {
+        console.info("ARRAY DEFINED");
+      }
+
+      const person = {};
+      if (person.name === undefined) {
+        console.info("OBJECT UNDEFINED");
+      } else {
+        console.info("OBJECT DEFINED");
+      }
+      //   berlaku juga dengan object
+    </script>
+  </body>
+</html>

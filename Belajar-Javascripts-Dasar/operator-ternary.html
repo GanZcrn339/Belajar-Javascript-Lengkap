@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Ternary</title>
+  </head>
+  <body>
+    <script>
+      const nilai = 90;
+      //   kita buat const nilai = 90
+      let ucapan;
+      //   lalu kita buat var undefined
+
+      if (nilai >= 75) {
+        ucapan = "Selamat Anda Lulus";
+      } else {
+        ucapan = "Silahkan Coba Lagi";
+      }
+      //   kita buat if dengan dua variabel yang sudah di buat sebelum nya
+      //   dimana var undefined (ucapan) kita isi value nya di if dan else di bagian outputnya
+      // yang mana isi dari var ucapan tergantung dengan kondisi nya
+
+      document.writeln(`<p>${ucapan}</p>`);
+      //   kita tampilkan dengan memanggil var ucapan yang akan muncul sesuai kondisi di atas
+      // jika true maka var ucapan nya akan di isi dengan "Selamat Anda Lulus"
+      //   jika false maka ucapan = "Silahkan Coba Lagi"
+
+      //   untuk mempersingkat penulisan if else kita bisa menggunakan operator ternary seperti di bawah ini
+      ucapan = nilai >= 75 ? "Selamat Anda Lulus" : "Silahkan Coba Lagi";
+      //   dimana semua nya dimasukan ke dalam var ucapan
+      //   bagian "nilai >= 75" adalah kondisi nya
+      // tanda ? sebagai maka jika di if
+      //   "Selamat Anda Lulus" adalah output pertama jika true
+      //  tanda : sebagai else/else if
+      //   "Silahkan Coba lagi" sebagai output jika false(else)
+
+      document.writeln(`<p>${ucapan}</p>`);
+      //   kita tampilkan
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Logika</title>
+    <!-- 
+        && false jika salah satu nilai false
+        || false jika kedua nilai false
+        (!) negasi/false
+
+
+     -->
+  </head>
+  <body>
+    <script>
+      const nilaiUjian = 90;
+      const nilaiAbsensi = 90;
+      //   kita buat 2 buah var const dengan number
+
+      const lulusUjian = nilaiUjian > 75;
+      //   kita masukan operator perbandingan ke dalam const lulusUjian
+      //   arti nya const nilaiUjian = 90 jika > (lebih dari) 75 maka const lulusUjian = true
+      //   tapi jika tidak >75 maka akan false
+      document.writeln(lulusUjian);
+      //   kita tampilkan const lulus ujian
+      const lulusAbsensi = nilaiAbsensi > 75;
+      document.writeln(lulusAbsensi);
+      //   ini juga sama
+
+      const lulus = lulusUjian && lulusAbsensi;
+      //   nah kita menggunakan operator logika && (dan)
+      // jadi const lulusUjian dan lulusAbsensi dimasukan ke dalam var const lulus
+      //   jika kedua nya true maka hasil dari const lulus = true
+      //   operator && harus true kedua nilai nya, jika salah satu false maka hasilnya akan false
+      document.writeln(lulus);
+      //   kita tampilkan
+    </script>
+  </body>
+</html>

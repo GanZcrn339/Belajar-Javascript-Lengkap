@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reflect</title>
+    <!-- reflect untuk mengeksekusi function tapi tidak memiliki constructor
+    dan penggunaan nya tidak membaut object dengan new reflect
+    -->
+  </head>
+  <body>
+    <script>
+      const person = {};
+      //   kita buat sebuah object
+
+      Reflect.set(person, "firstName", "Eko");
+      Reflect.set(person, "lastName", "Khannedy");
+      //   kita gunakan reflect untuk mengisi data di object di atas
+
+      console.info(person);
+
+      console.info(Reflect.get(person, "firstName"));
+      console.info(Reflect.get(person, "lastName"));
+
+      console.info(Reflect.has(person, "firstName"));
+      console.info(Reflect.has(person, "middleName"));
+      console.info(Reflect.has(person, "lastName"));
+      //   has untuk mengecek apakah ada property di object yang dimaksud dimana return nya boolean
+    </script>
+  </body>
+</html>

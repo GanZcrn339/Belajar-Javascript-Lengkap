@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Logika di Non Boolean</title>
+    <!-- OR || dan AND &&  -->
+    <!-- Kedua operator logika di atas bisa digunakan di operasi non Boolean
+    Dimana jika OR akan mengambil data Truthy dari urutan paling awal,
+    Jika Tidak ada maka yang terakhir yang akan di ambil
+    Sedangkan AND akan mengambil data falsy dari yang paling awal,
+    Jika tidak ada data falsy, maka akan mengambil data truthy terakhir
+    -->
+  </head>
+  <body>
+    <script>
+      console.info("Hello" || "");
+      //   Otomatis akan manggil Hello karena yang truthy cuman itu
+      console.info("" || []);
+      //   String Kosong termasuk falsy, Maka dari itu yang di panggil
+      // adalah array yang truthy
+      console.info("0" || "NOL");
+      //   Jika kedua nya truthy seperti di atas, maka yang akan di ambil nya adalah yang pertama
+      console.info(0 || "NOL");
+      //   Kali ini yang terakhir yaitu "NOL" karena 0 false
+      console.info(null || "NULL");
+      //   otomatis string null karena null adalah falsy
+      console.info(undefined || "UNDEFINED");
+      //   ini juga sama pasti "UNDEFINED" Karena cuman dia yang truthy
+      console.info(0 || false);
+      //   Jika Kedua nya falsy maka yang di panggil Falsy Terakhir
+
+      const person = {
+        firstName: "",
+        lastName: "Khannedy",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.info(name);
+      //   di atas adalah cara penggunaan operator logika non boolean
+      // dimana kita akan mengambil property dari objek person yang truthy saja
+
+      console.info("HELLO" && "");
+      //   jika AND maka yang diambil nya data falsy, diatas yang falsy adalah string kosong
+      console.info("" && []);
+      //   nah klao ini string kosong juga
+      console.info("0" && "NOL");
+      //   jika kedua nya truthy, maka yang di ambil data terakhir yaitu string "NOL"
+    </script>
+  </body>
+</html>

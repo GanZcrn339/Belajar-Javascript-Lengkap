@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <script>
+      // dikarenakan error merupakan sebuah class maka kita bisa extend class error di child nya
+      class ValidationError extends Error {
+        constructor(message, field) {
+          super(message);
+          this.field = field;
+        }
+      }
+      //   seperti di atas
+      //   message merupakan property yang ada di class error
+
+      class MathUtil {
+        static sum(...numbers) {
+          if (numbers.length === 0) {
+            throw new ValidationError("Total parameter harus lebih dari 0", "numbers");
+            // kita throw class error nya dan isi kedua parameter const nya
+          }
+
+          let total = 0;
+          for (const number of numbers) {
+            total += number;
+          }
+          return total;
+        }
+      }
+
+      try {
+        console.info(MathUtil.sum());
+        console.info("Eko");
+        // kita coba panggil bagian yang kita isi dengan error secara disengaja
+      } catch (
+        error
+        //   kita tangkap error nya dari class validationError
+      ) {
+        if (error instanceof ValidationError) {
+          console.info(`Terjadi error di field ${error.field} dengan error ${error.message}`);
+        } else {
+          console.info(`Terjadi error : ${error.message}`);
+        } // kita buat sebuah kondisi dimana jika error dari class validationError maka tampilkan error.field dan error.message
+        // jika bukan maka tampilkan error.massage saja dari class paraent error nya
+      } finally {
+        console.info("Program selesai");
+        // jika sudah selesai kita pakai finally
+      }
+
+      console.info("Khannedy");
+    </script>
+  </body>
+</html>

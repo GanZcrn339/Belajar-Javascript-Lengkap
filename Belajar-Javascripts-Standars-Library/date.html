@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Date</title>
+  </head>
+  <body>
+    <script>
+      {
+        // create date
+        // Date berbentuk class
+        const date1 = new Date();
+        // new Date() berfungsi untuk membuat date saat ini
+        console.info(date1);
+
+        const date2 = new Date(2020, 10, 10);
+        // kalo ini membuat date dengan
+        //  constructor function nya param nya di isi dengan tahun , bulan dan tanggal
+        console.info(date2);
+
+        const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+        // ini juga sama membuat date tapi param nya diisi sampe mili detik
+        console.info(date3);
+
+        const date4 = new Date(1623167419514);
+        console.info(date4);
+      }
+
+      {
+        // epoch & unix timestamp merupakan hitungan milisecond setelah/sejak tanggal 1 Januari 1970
+
+        const date1 = new Date();
+        console.info(date1.getTime());
+        // di atas untuk mendapatkan timestamp saat ini
+        // gettime berfungsi untuk mengubah param nya ke epoch dan unix timestamp
+
+        const date2 = new Date(2020, 10, 10);
+        console.info(date2.getTime());
+
+        const date3 = new Date(2020, 10, 10, 16, 15, 9, 123);
+        console.info(date3.getTime());
+
+        const date4 = new Date(1623167419514);
+        console.info(date4.getTime());
+        // di atas jika sudah di isi tapi hasil nya sama
+
+        console.info(Date.now());
+        // ini juga sama untuk mendapatkan timestamp saat ini dimana hasilnya akan terus berubah
+      }
+
+      {
+        // date parsing membuat date dari string fromat nya harus Y-M-D-T-H-M-S-SSSZ
+        // tahun-bulan-tanggal-T(Pemisah)-jam-menit-detik-milidetik-Timezone
+
+        const time = Date.parse("2020-10-10T08:45:45.123+07:00");
+        console.info(time);
+        // Penulisan nya seperti di atas
+        // hasil nya epoch milis
+
+        const date = new Date(time);
+        console.info(date);
+        // kita panggil lagi
+        // kalo ini dalam bentuk date
+      }
+
+      {
+        // getter dan setter
+
+        const date = new Date();
+
+        console.info(date.getFullYear());
+        // untuk mendapatkan tahun sekarang
+        console.info(date.getMonth());
+        // untuk mendapatkan bulan sekarang
+        console.info(date.getDate());
+        // untuk mendapatkan tanggal di bulan ini
+        console.info(date.getHours());
+        //untuk medapatkan jam brp di tanggal tersebut
+        console.info(date.getMinutes());
+        // untuk mendapatkan menit di jam tersebut
+        console.info(date.getSeconds());
+        console.info(date.getMilliseconds());
+        console.info(date.getTimezoneOffset());
+      }
+    </script>
+  </body>
+</html>

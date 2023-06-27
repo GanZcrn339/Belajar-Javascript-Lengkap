@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Nullish Coalescing</title>
+  </head>
+  <body>
+    <script>
+      let parameter;
+      //   kita buat var undefined seperti di atas
+
+      let data = parameter;
+      //   kita masukan var undefined tersebut ke sebuah variabel lagi yaitu var data
+      if (data === undefined || data === null) {
+        //   kita buat if dimana jika isi dari var data bertipe data undefined atau null (identik)
+        data = "Nilai Default";
+        // maka var data isi nya di ubah dengan string seperti di atas
+      }
+
+      document.writeln(`<p>${data}</p>`);
+      //   lalu kita tampilkan
+
+      // kita bisa sederhanakan seperti di bawah ini dengan operator Nulish Coalescing
+      data = parameter ?? "Nilai Default"; //jika parameter bernilai undefined/null maka di isi dengan output "Nilai Default"
+      // dimana bagian ?? sebagai maka jika if atau bagian () jika di if tapi khusus untuk kondisi yang var nya undefined atau null
+
+      document.writeln(`<p>${data}</p>`);
+      // lalu kita tampilkan
+    </script>
+  </body>
+</html>

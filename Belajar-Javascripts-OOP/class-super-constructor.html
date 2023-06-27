@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class Super Constructor</title>
+    <!-- tinggal liatlah OOP nya PZN -->
+  </head>
+  <body>
+    <script>
+      class Employee {
+        constructor(firstName) {
+          this.firstName = firstName;
+        }
+
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is employee ${this.firstName}`);
+        }
+      }
+
+      class Manager extends Employee {
+        constructor(firstName, lastName) {
+          super(firstName); //inti nya kalo mau pake property class employee harus pake keyword super
+          //   kalo sebelum nya kan const.call(firstname) nah ini kyk tadi akses nya
+          //   jadi gak perlu ngetik this.firstname lagi atau nambahin property lagi
+          this.lastName = lastName;
+        }
+
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is manager ${this.firstName} ${this.lastName}`);
+        }
+      }
+
+      const budi = new Employee("Budi");
+      budi.sayHello("Joko");
+
+      const eko = new Manager("Eko", "Khannedy");
+      //   pemanggilan nya seperti di atas
+      eko.sayHello("Joko");
+
+      console.info(budi);
+      console.info(eko);
+    </script>
+  </body>
+</html>

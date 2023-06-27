@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator instanceof</title>
+  </head>
+  <body>
+    <script>
+      class Employee {}
+
+      class Manager extends Employee {}
+
+      const budi = new Employee();
+      const eko = new Manager();
+
+      console.info(typeof budi);
+      console.info(typeof eko);
+      //   typeof untuk mengecek object itu bertipe object atau bukan
+
+      console.info(budi instanceof Employee); // true
+      console.info(budi instanceof Manager); // false
+      //   true jika object merupakan intance dari class yang di mksd
+      //  seperti object budi yang merupakan intance dari employee
+
+      console.info(eko instanceof Employee); // true
+      console.info(eko instanceof Manager); // true
+      //   nah kalo child class juga bisa, seperti object eko dimana ketika
+      // kita intanceof ke class employee hasil nya akan true karena merupakan
+      // parent class dari class Manager, begitu pun jika kita instanceof object budi dengan
+      //   class manager akan true jika karena merupakan child dari class employee
+    </script>
+  </body>
+</html>

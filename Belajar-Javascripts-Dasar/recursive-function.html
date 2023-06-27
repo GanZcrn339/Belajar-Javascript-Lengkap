@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Recursive</title>
+    <!-- manggil function diri nya sendiri -->
+  </head>
+  <body>
+    <script>
+      function factorial(value) {
+        let result = 1;
+        for (let i = 1; i <= value; i++) {
+          result *= i; //nilai result tidak berubah karena yang di increment hanya i nya saja
+        }
+        return result;
+      }
+      //   kita buat sebuah function factorial didalam block nya
+      // kita bikin sebuah var result = 1;
+      // lalu kita buat sebuah perulangan , dengan mengisi init statement dengan sebuah var i =1
+      // lalu di beri kondisi dimana jika i kurang dari sama dengan value(yang akan di input ketika memanggil function nya nanti)
+      //   maka value i akan di kalikan dengan result dimana di simpan di var result
+      // lalu ketika hasil nya sudah di simpan, var i di increment kemudian memulai lagi perulangan dari bagian kondisi hingga tidak memenuhi kondisi lagi
+      console.info(factorial(10));
+      //   nah di sini kita input value nya dengan 10
+      // jadi di bagian result *= i seperti ini
+      // 1 *= 1 = 1 di simpan di result lalu i nya di increment
+      // lalu 1 *= 2 = 2 di simpan di result lalu i nya di increment lagi
+      // 1*=3 = 3 di simpan di result lalu i di increment hingga nilai = 10
+      //jadi hasil nya 1x2x3x4x5x6x7x8x9x10 = 3628800
+
+      function factorialRecursive(value) {
+        if (value === 1) {
+          return 1;
+        } else {
+          return value * factorialRecursive(value - 1); //seperti ini yang memanggil function dengan diri nya sendiri
+        }
+      }
+
+      console.info(factorialRecursive(10));
+      //   di atas juga sama untuk menghitung faktorial tapi menggunakan if yang di ulang
+      //   hasil nya dengan di simpan di bagian parameter, jika sudah tidak sesuai dengan input parameter
+      // maka function akan berhenti
+
+      //   contoh nya seperti di bawah ini tapi input nya 5
+      factorialRecursive(5);
+      // 5 * factorialRecursive(4)
+      // 5 * 4 * factorialRecursive(3)
+      // 5 * 4 * 3 * factorialRecursive(2)
+      // 5 * 4 * 3 * 2 * factorialRecursive(1)
+      // 5 * 4 * 3 * 2 * 1
+    </script>
+  </body>
+</html>

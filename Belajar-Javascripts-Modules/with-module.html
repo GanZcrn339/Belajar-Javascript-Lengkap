@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>With Module</title>
+    <script type="module" src="scripts/say.js"></script>
+    <!-- nah untuk menggunakan module kita hanya perlu menambahkan type module nya
+    sebenernya kalo udah di import tidak perlu di tulis lagi module nya di atas karena di bawah juga kita menulisnya lagi -->
+  </head>
+  <body>
+    <script type="module">
+      //di atas juga kita tambahin
+      import { sayHello, sayGoodBye, name } from "./scripts/say.js";
+      //   nah tinggal import function  dan variable yang sebelum nya di tambahkan export
+      //   di file say.js
+      //   kalo yang di export di file js nya gk bisa muncul walaupun dipanggil dan akan error
+      //   kalo satu yg di panggil sih gk perlu pake kurung kurawal pas import
+      sayHello("Eko");
+      sayGoodBye("Eko");
+
+      console.info(name);
+      //   maka bisa di gunakan deh gak error lagi
+    </script>
+  </body>
+</html>

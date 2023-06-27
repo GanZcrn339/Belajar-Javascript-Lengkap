@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class Inheritance</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        sayHello(name) {
+          console.info(`Hello ${name}, my name is employee ${this.name}`);
+        }
+      }
+
+      class Manager extends Employee {
+        // sayHello(name) {
+        //   console.info(`Hello ${name}, my name is manager ${this.name}`);
+        // } nah walaupun kita hapus method class nya kita bisa masih bisa mengakses nya
+        // jika manager tidak ada property/method yang di inginkan maka akan mengakses porto employee
+        // jika ada maka akan di akses walaupun beda kelas tapi jika tidak ada akan mengakses proto object sebagai akhir
+      }
+      //   cukup menambahkan extends +nama class yang ingin diambil isi nya
+
+      const budi = new Employee();
+      budi.name = "Budi";
+      budi.sayHello("Joko");
+
+      const eko = new Manager();
+      eko.name = "Eko";
+      eko.sayHello("Joko");
+      // cara pemanggilan nya seperti di atas
+      console.info(budi);
+      console.info(eko);
+    </script>
+  </body>
+</html>

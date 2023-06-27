@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Masalah Variable var</title>
+  </head>
+  <body>
+    <script>
+      // global scope
+      var i = 20;
+
+      for (var i = 0; i < 10; i++) {
+        // local scope
+        console.info(`Local ${i}`);
+      }
+
+      console.info(`Global ${i}`); //yang ini di harapkan nya nya var i yang ada di global
+      //   tapi yang muncul malah yang hasil dari for
+      //   jika pake let yang di akses nya yang global
+    </script>
+  </body>
+</html>

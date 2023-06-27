@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node</title>
+  </head>
+  <body>
+    <ul id="menu">
+      //bagian id menu disamping bisa di sebut parent class dan yang dibawah nya childclass
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+    <script>
+      const menu = document.getElementById("menu");
+      console.info(menu);
+      //   kita get id nya lalu tampilkan
+
+      const second = document.getElementById("second");
+      console.info(second);
+      //   nah yang ini untukn child nya
+
+      //   kesimpulan nya mau child ataupun parent bisa di get element by id
+    </script>
+  </body>
+</html>

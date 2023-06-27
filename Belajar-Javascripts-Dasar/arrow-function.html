@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Arrow</title>
+  </head>
+  <body>
+    <script>
+      // const sayHello = (name) => {
+      //     const say = `Hello ${name}`;
+      //     console.info(say);
+      // }
+      //   bagian (name) adalah parameter di arrow function lalu di berikan tanda =>
+      // kemudian isi block function nya, nah function arrow ini harus did masukan ke dalam
+      // var seperti di atas ke dalam var sayHello
+
+      // const sayHello = (name) => console.info(`Hello ${name}`);
+
+      const sayHello = (name) => console.info(`Hello ${name}`);
+      //   nah di atas adalah arrow function tanpa block yang hanya bisa
+      //  dilakukan jika block function nya sebaris,
+
+      sayHello("Eko");
+      //   kita bisa panggil function nya beserta input parameter nya
+
+      // const sum = (first, second) => {
+      //     return first + second;
+      // }
+      //   nah di atas kita bisa menggunakan dua parameter dimana di dalam block
+      // function nya ada return operasi mtk penjumlahan menjumlahkan paramter pertama dan kedua
+
+      const sum = (first, second) => first + second;
+      //   di atas versi tanpa block function karena memang cuman satu baris syntax nya
+
+      console.info(sum(100, 100));
+      // nah di atas kita panggil function nya dengan di isi parameter nya
+      // lalu di panggil di console
+      function giveMeName(callback) {
+        callback("Eko"); // di samping sama dengan isi function nya seperti ini giveMeName = eko
+      }
+      //   jadi dengan callback kita bisa membuat function yang sudah return nya
+
+      // Anonymous Function
+      // giveMeName(function (name) {
+      //     console.info(`Hello ${name}`);
+      // })
+
+      // Arrow Function
+      giveMeName((name) => console.info(`Hello ${name}`));
+      //   nah disini dengan arrow function nya
+      // kita panggil funciton giveMeName yang di isi parameter nya dengan arrwo function
+      //   dimana name sudah disi dengan callback yaitu eko kemudian return nya yaitu bagian konsol
+    </script>
+  </body>
+</html>
+<!-- Belom Begitu Paham -->

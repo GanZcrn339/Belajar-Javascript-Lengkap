@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event</title>
+  </head>
+  <body>
+    <h1 id="text">Click Yellow Box</h1>
+    <div id="canvas" style="width: 500px; height: 500px; background-color: yellow"></div>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const text = document.getElementById("text");
+
+      canvas.onclick = function (event) {
+        text.textContent = `You click at (${event.x}, ${event.y})`;
+      };
+
+      //   contoh penggunaan event seperti di atas dimana data event nya di tambahkan di param function
+      // lalu block nya kita isi dengan event nya
+      //   di atas event onclick untuk mengclick canvas
+      // ketika di click kita akan tau posisi clickan nya dalam bentuk x dan y
+
+      //   di atas global event nya tergantung
+      // di atas hanya contoh saja onclick yang mana event nya berkaitan dengan mouse click
+    </script>
+  </body>
+</html>

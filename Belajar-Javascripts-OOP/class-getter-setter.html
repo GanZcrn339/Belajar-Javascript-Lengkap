@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class : Getter Setter</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        constructor(firstName, lastName, nickname) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.nickname = nickname;
+        }
+        // kita buat class dengan dua buah property yang nanti di isi parameter nya
+
+        get fullName() {
+          return `${this.firstName} ${this.lastName} ${this.nickname}`;
+        }
+        // kita buat getter fullname yang isi nya mengambil property di atas
+
+        set fullName(value) {
+          const result = value.split(" ");
+          this.firstName = result[0];
+          this.lastName = result[1];
+          this.nickname = result[2];
+        }
+        // kemudian kita set fullname dengan memberi value nya yang mana kita split dengan spasi
+        // antara property nya, lalu property nya di beri index array
+      }
+
+      const eko = new Person("Eko", "Khannedy", "kurniawan");
+      console.info(eko); //ini cara pemanggilan intance nya
+      console.info(eko.fullName); //ini pemanggilan getter nya
+
+      eko.fullName = "Budi Nugraha Ekayuna"; //ini cara menginput set nya
+      console.info(eko); //ini kita liat get set nya di proto class nya
+      //   tinggal kita panggil
+
+      //   NOTE!!!!
+      // Bagian split masih belum terlalu ngerti
+      // kesimpulan sementara yaitu split(" ") spasi nya sebagai pembatas antar array
+      // jadi jika budi nugraha, budi index 0 , nugraha index 1
+    </script>
+  </body>
+</html>

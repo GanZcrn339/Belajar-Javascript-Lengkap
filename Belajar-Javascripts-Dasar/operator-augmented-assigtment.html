@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Augmented Assigment</title>
+  </head>
+  <body>
+    <script>
+      let result = 1 + 2; // 3
+      //   disini kita masukan operator mtk + ke dalam var result yang hasil nya 3
+      document.writeln("<p>1 + 2 = " + result + "</p>");
+      //   kita tampilkan
+      let originalResult = result; // 3
+      //   kita masukan hasilnya ke dalam var originalResult
+
+      result -= 1; // 2
+      //   nah disini kan result = 3
+      // di atas dilakukan operasi pengurangan (-)
+      //   yang mana menggunakan augmented assigtment
+      // yaitu untuk mempersingkat penuylisan kode nya
+      // jadi tidak seperti ini penulisan nya
+      // let result = result - 1 hasil nya = 2
+      // untuk mepersingkat penulisan nya menjadi seperti ini
+      //   result -= 1 artinya sama dengan result di atas
+      document.writeln("<p>" + originalResult + " - 1 = " + result + "</p>");
+      originalResult = result; // 2
+
+      result *= 2; // 4
+      document.writeln("<p>" + originalResult + " * 2 = " + result + "</p>");
+      //   ini juga sama menggunakan augtmented assigtment
+    </script>
+  </body>
+</html>

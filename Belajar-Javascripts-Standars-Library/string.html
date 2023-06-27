@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>String</title>
+    <!-- disini kita akan bahas instance method dan instance property dari string -->
+  </head>
+  <body>
+    <script>
+      const name = "Eko Kurniawan Khannedy";
+      // ketika menggunakan method string, string utama nya tidak akan berubah
+      // tapi akan mereturn string baru
+      console.info(name.length); //.length untuk menghitung jumlah char termasuk spasi dari sebuah string
+      console.info(name.toLowerCase()); // ini untuk membuat semua string menjadi huruf kecil semua
+      console.info(name.toUpperCase()); // kalo ini huruf besar semua
+      console.info(name.split(" ")); //nah split untuk memisahkan string menjadi array,
+      //   contoh nya dengan spasi sebagai pemisah antar kata/kalimat yang di jadikan sebuah array
+      // di atas eko menjadi array index 0
+      // dipisah dengan spasi
+      // kurniawan menjadi array index 1
+      //   output nya akan menjadi array
+      console.info(name);
+
+      const input = "     input data     ";
+      console.info(input.trim()); //trim untuk memotong sesuatu di string seperti di atas
+      //   bagian spasi kiri kanan nya di potong
+      console.info(input);
+    </script>
+  </body>
+</html>

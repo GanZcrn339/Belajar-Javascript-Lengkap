@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      const name = "Eko Kurniawan Khannedy";
+      const firstName = "Eko";
+      const middleName = "Kurniawan";
+      const lastName = "Khannedy";
+      //   kita buat 4 const di atas
+      const template = `Name : ${firstName} ${middleName} ${lastName}`;
+      // nah dengan menggunakan string template (`) kita bisa mengabungkan string lainya/variable/operasi mtk
+      // dengan menambahkan ${var} untuk menambahkan variable
+      const lama = "Name : " + firstName + " " + middleName + " " + lastName;
+      //   nah di atas tanpa menggunakan string template
+
+      console.info(template);
+      //   kita tampilkan const template di console
+
+      const nilai = 50;
+      const template2 = `Name : ${name}, Lulus : ${nilai > 70}`;
+      //   kita juga bisa menambahkan operasi logika/mtk atau lainya
+      // dimana di atas const template2 berisi string name yang yang di tambah var name
+      // lalu ada operasi perbandingan dimana lulus jika nilai (const nilai) lebih dari 70
+
+      console.info(template2);
+      //   baru kita tampilkan yang mana akan menampilkan
+
+      const multiline = `Nama Saya Eko,
+Sekarang Kerja,
+Sering Juga Bikin KOnten Programming,
+Kalo lagi males, paling tidur`;
+      // nah dengan string template (`) kita bisa juga menuliskan string yang
+      // multiline
+
+      document.writeln("<pre>");
+      document.writeln(multiline);
+      document.writeln("</pre>");
+      //   kita tampilkan deh
+    </script>
+  </body>
+</html>

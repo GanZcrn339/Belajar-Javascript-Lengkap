@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Slow</title>
+  </head>
+  <body>
+    <button id="buttonTask">Click Me</button>
+
+    <script>
+      function slowLog(total) {
+        for (let i = 0; i < total; i++) {
+          console.info(i);
+        }
+      }
+
+      document.getElementById("buttonTask").onclick = function () {
+        console.info("Start");
+        slowLog(100000);
+        console.info("End");
+      };
+
+      // nah di atas adalah proses concurrent yang mana akan menyebabkan browser nya nge hang
+      // jika button nya di click terus terus an,
+      // yang tadi nya button nya masib bisa hover atau bahkan di click jadi tidak bisa
+    </script>
+  </body>
+</html>

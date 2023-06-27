@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NodeList</title>
+    <!-- nodelist digunakan jika kita ingin mengambil atau menyeleksi element yang banyak seperti li di bawah -->
+  </head>
+  <body>
+    <ul id="menu1">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+
+    <ul id="menu2">
+      <li>Eko</li>
+      <li>Kurniawan</li>
+      <li>Khannedy</li>
+    </ul>
+
+    <script>
+      const list = document.querySelectorAll("li");
+      //   dengan menggunakan querySelectorAll artinya pilih semua element yang id nya li
+      console.info(list);
+      //   kita muncul kan di konsol
+
+      const menu1 = document.getElementById("menu1").childNodes;
+      console.info(menu1);
+
+      const menu2 = document.getElementById("menu2").childNodes;
+      console.info(menu2);
+      //   di atas kita coba untuk menampilkan childnode dari kedua element menu
+    </script>
+  </body>
+</html>

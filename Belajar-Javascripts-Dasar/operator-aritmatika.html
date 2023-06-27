@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Aritmatika</title>
+  </head>
+  <body>
+    <script>
+      let result = 1 + 2; // 3
+      //   jadi 1 + 2 = 3
+      document.writeln("<p>1 + 2 = " + result + "</p>");
+      //   untuk menampilkan nya kita perlu writeln dengan menambahkan
+      // "<p>1+2 = " sebagai string untuk tampilan 1 + 2 =
+      // kemudian ditambah + result yaitu hasil dari 1 + 2 yang dimasukan ke var result hasilnya jadi 3
+      let originalResult = result; // 3
+      //   kemudian result yang hasilnya 3 tadi dimasukan lagi ke dalam var yaitu originalResult
+
+      result = result - 1; // 2
+      //   nah disini kita akan melakukan pembagian menggunakan hasil operasi mtk sebelum nya
+      //  nah operasi mtk sebelumnya menghasilkan var result = 3
+      //   di atas result = 3 di kurangi (-) 1 lalu di masukan ke dalam var yang nama nya sama yaitu result
+      // artinya var result baru akan menerima data dari operasi mtk di atas yaitu 2 karena 3 -1 =2
+
+      document.writeln("<p>" + originalResult + " - 1 = " + result + "</p>");
+      //  kita tampilkan deh
+      // originalResult = 3 di kurangi string - 1 hasl nya = result baru = 2
+      originalResult = result; // 2
+      //   nah result baru kita masukan kembali ke orginalresult yang baru
+      // jadi data originalResult bukan lagi = 3 tapi 2 karena sudah di rubah
+
+      result = result * 2; // 4
+      document.writeln("<p>" + originalResult + " * 2 = " + result + "</p>");
+      //   ini sama sih cuman operasi perkalian dengan data dari operasi mtk sebelum nya
+    </script>
+  </body>
+</html>

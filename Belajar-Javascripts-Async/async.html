@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Async</title>
+  </head>
+  <body>
+    <script>
+      // Promise<String>
+      function getNamePromise() {
+        return new Promise(function (resolve, reject) {
+          resolve("Eko Promise");
+        });
+      }
+
+      //   di bawah adalah cara membuat promise menggunakan async
+      //   async digunakan untuk menandakan bahwa function tersebut adalah async
+      //   dimana ia mengembalikan Promise
+      //   Promise<String>
+      async function getNameAsync() {
+        return "Eko Async"; //nah return di samping otomatis promise
+      }
+
+      getNamePromise().then((name) => console.info(name));
+
+      getNameAsync().then((name) => console.info(name));
+      //   dan kedua nya bisa di then
+    </script>
+  </body>
+</html>

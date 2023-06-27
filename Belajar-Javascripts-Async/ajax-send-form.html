@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax Send JSON</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >Username:
+        <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password"
+        >Password:
+        <input type="password" id="password" name="password" />
+      </label>
+      <br />
+      <input type="button" id="login" value="Login" />
+    </form>
+    <h1 id="response"></h1>
+    <script>
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "https://anime.free.beeceptor.com");
+        ajax.onload = function () {
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+        ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // nah jika form maka tipe konten yang diberitahukan ke server adalah seperti di atas
+
+        const form = new URLSearchParams();
+        form.append("username", document.getElementById("username").value);
+        form.append("password", document.getElementById("password").value);
+        // cara mengirim form data dengan ajax masih menggunakan class URLSearchParams
+
+        ajax.send(form);
+        // kita panggil form nya di send
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>

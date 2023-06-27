@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Switch Statement</title>
+  </head>
+  <body>
+    <script>
+      const nilai = "E";
+
+      //   switch berfungsi seperti if namun dengan kondisi == saja
+      switch (nilai) {
+        //   property nya kita isi dengan var nilai = e di atas
+        case "A": //jika nilai = A maka tampilkan wirteln di bawah ini
+          document.writeln("<p>Wow Anda Lulus Dengan Baik</p>");
+          break;
+        //   lalu kita break artinya operasi nya di hentikan jika true, jika false
+        // maka akan di lanjutkan ke operasi selanjutnya (jika tidak pake break maka akan terus melakukan operasi nya walaupun sudah true)
+        case "B":
+        case "C":
+          // nah kita bisa pake dua kondisi untuk mengencek nya
+          document.writeln("<p>Anda Lulus</p>");
+          break;
+        case "D":
+          document.writeln("<p>Anda Tidak Lulus</p>");
+          break;
+        default:
+          // default = else jika semua nya salah atau false
+          document.writeln("<p>Mungkin Anda Salah Jurusan</p>");
+      }
+
+      if (nilai === "A") {
+        document.writeln("<p>Wow Anda Lulus Dengan Baik</p>");
+      } else if (nilai === "B" || nilai === "C") {
+        document.writeln("<p>Anda Lulus</p>");
+      } else if (nilai === "D") {
+        document.writeln("<p>Anda Tidak Lulus</p>");
+      } else {
+        document.writeln("<p>Mungkin Anda Salah Jurusan</p>");
+      }
+    </script>
+  </body>
+</html>

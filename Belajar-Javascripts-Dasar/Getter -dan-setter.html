@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Getter dan Setter</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Eko",
+        lastName: "Khannedy",
+        get fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        },
+        // nah kita bisa membuat function dengan get yang mana nama property dan value nya dari nama function nya
+        // dengan getter kita bisa memanggil property nya layak nya property jika tidak pakai get kita manggil nya layak nya function
+        set fullName(value) {
+          const array = value.split(" "); //kita gunakan split
+          this.firstName = array[0]; //firstname nya kita jadikan array dengan index 0
+          this.lastName = array[1]; //lastname nya kita jadikan array dengan index 1
+        },
+        // untuk mengubah property ya kita bisa gunakan setter
+        // di bawah kita bisa isi property nya yang merupakan objek method
+        // kita isi parameter nya seperti Budi Nugraha di bawah
+      };
+
+      person.fullName = "Budi Nugraha";
+      //   eko khannedy kita ubah jadi buddy nugraha
+      console.table(person);
+      //   lalu tampilkan di table dengan langsung memanggil objek nya
+      //   tidak memanggil satu satu lagi property nya
+
+      person.fullName = "Joko Morro";
+      console.table(person);
+
+      person.fullName = "Eko Khannedy";
+      console.table(person);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tipe Data Array</title>
+  </head>
+  <body>
+    <script>
+      let arrayKosong = [];
+      //   di atas adalah array kosong untuk memperlihatkan cara membaut array
+
+      let arrayNama = ["Eko", "Kurniawan", "Khannedy"];
+      //   kalo ini array dengan isi 3 string dimana dibatasi tanda , (koma) antara aray yang satu dengan array yang lainya
+      //   di atas ada 3 array dengan sampai 2 index (0,1,2)
+      // eko dengan index 0
+      // kurniawan dengan index 1
+      // khannedy dengan index 2
+      //   array tersebut di masukan ke dalam var arrayNama
+
+      const names = [];
+      //   kita buat array kosong
+      names.push("Eko");
+      names.push("Kurniawan", "Khannedy");
+      names.push("Budi", "Joko", "Rudi");
+      //   untuk menambahkan array kita harus menggunakan function.push di nama const array nya
+      // di atas nama nya names jadi kita tambahkan names.pushlalu kita masukan array nya dengan (array)
+      //   setiap di tambahkan akan bertambah di index terakhir..
+      // contoh : eko[1] names.push ("kurniawan", "khannedy")
+      //   jadi array nya seperti ini names = ["eko", "kurniawan", "khannedy"]
+      // di atas ada 6 array dengan tipedata string yang di tambahkan dari index ke-0
+      console.table(names);
+      //   kita tampilkan di console array nya dengan table
+
+      console.info(names[0]);
+      console.info(names[1]);
+      console.info(names[2]);
+      //   untuk menampilkan isi array nya kita bisa gunakan function info lalu di teruskan dengan
+      // nomor index array yang kita ingin liat
+
+      names[0] = "Programmer";
+      names[1] = "Zaman";
+      names[2] = "Now";
+      //   untuk mengganti array seperti di atas sesuai nomer index nya
+
+      console.table(names);
+
+      delete names[3];
+      //   untuk menghapus seperti di atas dengan menambahkann nomor index nya
+
+      console.table(names);
+
+      names.push("Eko Lagi");
+      //   ini kalo mo nambahin lagi
+
+      console.table(names);
+
+      names[3] = "Diubah Lagi";
+      //   ini kalo mo ngubah
+      names.push(1, 2, 3, 4, 5);
+      //   ini kalo mo nambahin lagi (di atas buat nunjukin bahwa bisa pake tipe data lain)
+      names.push(["Eko", "Kurniawan", "Khannedy"]);
+      //   nah di atas cara menambahkan array di dalam array
+
+      console.table(names);
+      //   kita tampilkan(sebenernya cukup sekali saja di akhir untuk menampilkan array di console tapi di tutorial nya yah gitu)
+    </script>
+  </body>
+</html>

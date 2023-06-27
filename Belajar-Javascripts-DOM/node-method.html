@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node</title>
+    <!-- node method bisa digunakan untuk memanipulasi data di node nya -->
+  </head>
+  <body>
+    <ul id="menu">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+    <script>
+      const menu = document.getElementById("menu");
+      menu.removeChild(document.getElementById("first"));
+      menu.removeChild(document.getElementById("second"));
+      menu.removeChild(document.getElementById("third"));
+      //   seperti di atas untuk menghampus child node nya
+    </script>
+  </body>
+</html>

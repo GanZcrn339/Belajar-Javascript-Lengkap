@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set Timeout</title>
+    <!-- setTimeOut salah satu asynchrounous dimana kode akan berjalan
+    setelah menunggu waktu yang telah di sesuaikan -->
+  </head>
+  <body>
+    <script>
+      function addElement() {
+        const header = document.createElement("h1");
+        header.textContent = "Programmer Zaman Now";
+
+        document.body.appendChild(header);
+      }
+      //   kita buat sebuah function yang di dalam nya kita buat element h1
+      // lalu isi textContent nya dengan Programmer Zaman Now kemudian
+      // kita masukan ke dalam body dari document
+
+      setTimeout(addElement, 5000);
+      //   kita masukan function addelement ke dalam param setTimeout dan masukan
+      //   milis second
+      console.info("Program Selesai");
+      //   nah kita coba buat program menampilkan string di atas di konsol, maka
+      //   program tersebut akan muncul secara mandiri tanpa menunggu 5000 milis atau 5 detik
+      //   terlebih dahulu
+    </script>
+  </body>
+</html>

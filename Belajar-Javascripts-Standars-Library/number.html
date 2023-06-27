@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Number</title>
+    <!-- disini kita akan bahas static method dari number -->
+  </head>
+  <body>
+    <script>
+      const input = "12345";
+      const number = Number(input);
+
+      console.info(typeof input); //output nya akan string
+      console.info(typeof number); //output nya akan number karena merupakan method Number yang di isi input di atas lalu dimasukan ke dalam var number
+      console.info(number); //output nya adalah number dari input yang tadinya string jadi number 12345
+
+      console.info(Number("salah")); //output nya akan Nan karena yang dimasukan ke dalam method nya adalah string char
+
+      console.info(Number.MIN_VALUE); //output nya adalah value paling minimal dari tipe data number
+      console.info(Number.MAX_VALUE); //kalo ini value maksimal nya
+      console.info(Number.MIN_SAFE_INTEGER);
+      console.info(Number.MAX_SAFE_INTEGER); //kalo ini sama di atas value integer paling aman di tipe data number
+      console.info(Number.NaN);
+
+      const data = Number("eko");
+      console.info(Number.isInteger(data)); //nah method isInteger untuk mengecek data nya bertipe integer atau tidak
+      console.info(Number.isNaN(data)); //kalo ini Nan
+
+      const value = Number("12345");
+      console.info(value.toString(2)); //2 disini mksd nya binary jadi Number("12345") di ubah isi nya jadi binary(0 dan 1)
+      console.info(value.toLocaleString("id-ID"));
+      console.info(value.toLocaleString("en-US")); //kalo ini sama yang di atas jadi angka nya string sesuai negara jadi format nya ganti sesuai penulisan angka masing masing negara
+      // nah kalo di ID format pemisahnya menggunakan . (titik) contoh 12.345 (12 ribu titik untuk pemisah ribuan)
+      //   kalo US pake , (Koma)
+    </script>
+  </body>
+</html>

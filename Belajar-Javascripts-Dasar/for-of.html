@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>For Of</title>
+    <!-- for of tidak bisa di gunakan di objek karena tidak iterable -->
+  </head>
+  <body>
+    <script>
+      const names = ["Eko", "Kurniawan", "Khannedy"];
+      //   kita buat sebuah array
+      for (const name of names) {
+        document.writeln(`<p>${name}</p>`);
+      }
+      //   dengan for of kita bisa menampilkan seluruh data array yang ada di const names
+      // jadi bukan lagi property atau index yang di tampilkan
+
+      const fullName = "Eko Kurniawan Khannedy";
+      for (const character of fullName) {
+        document.writeln(`<p>${character}</p>`);
+      }
+      //   Nah begitu pula dengan string, kita bisa menggunakan for of untuk
+      //   menampilkan setiap char seperti di atas
+
+      // const person = {
+      //     firstName: "Eko",
+      //     lastName: "Khannedy"
+      // };
+      // for(const name of person){
+      //     document.writeln(`<p>${name}</p>`);
+      // }
+      //   jika di paksakan for of pada objek akan terjadi error
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Proxy</title>
+    <!-- proxy adalah bisa di ibaratkan sebagai perwakilan 
+    dimana data yang di akses dan data yang akan di ubah tidak langsung masuk ke object yang di tuju
+    tapi harus melewati proxy terlebih dahulu
+    -->
+  </head>
+  <body>
+    <script>
+      const target = {
+        middleName: "Kurniawan",
+      };
+      //   kita buat sebuah object target
+
+      const handler = {
+        get: function (target, property) {
+          console.info(`Access property : ${property}`);
+          return target[property];
+        },
+        // di atas kita buat sebuah object lagi yaitu handler
+        // dimana didalam nya ada anonymous function yangt di get dengan param pertama yaitu
+        // object target, dan kedua property nya
+        // dalam block function nya kita tampilkan di console sebuah string dan property dari object target
+        // lalu kita return property dari object target
+        set: function (target, property, value) {
+          console.info(`Change property ${property} : ${value}`);
+          if (value == null) {
+            // throw new Error("Tidak boleh null"); <---- Bisa Pake throw error juga karena tidak boleh null
+            target[property] = "";
+          } else {
+            target[property] = value;
+          }
+        },
+        // di atas kita buat function dengan set dimana param nya berisi object target beserta property
+        // dan value nya, di dalam block function nya kita tampilkan string yang berbunyi mengubah property nya dengan di ikuti param property dan value
+        //  lalu kita beri kondisi, jika value nya null maka property nya kosong
+        // jika tidak property nya di isi dengan value nya
+      };
+
+      const proxy = new Proxy(target, handler);
+      //   kita buat new proxy dengan menambahkan param target dan handler
+      proxy.firstName = "Eko";
+      proxy.lastName = null;
+      //   lalu kita isi proxy nya, ketika akan mengisi data, data nya akan melewati handler get dulu
+      //   jika tidak ada logic disana atau seperti di atas, akan langsung ke bagian set
+      //   dan melakukan operasi block function nya
+
+      console.info(proxy.firstName);
+      console.info(proxy.middleName);
+      console.info(proxy.lastName);
+      console.info(target);
+      //   kita tampilkan deh
+    </script>
+  </body>
+</html>

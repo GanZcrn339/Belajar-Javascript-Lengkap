@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operator Perbandingan</title>
+  </head>
+  <body>
+    <script>
+      let result = 5 == "5";
+      // nah di atas kita membandingkan 5 dengan string 5 yang hasil nya true
+      document.writeln("<p>" + result + "</p>");
+
+      result = 5 === "5";
+      //   kalo ini jadi false karena === untuk membandingkan data yang sama seklaigus dengan
+      // tipe data nya, sayang nya si atas tipe data dari data di atas berbeda, yang satu number yang satu nya lagi string
+      document.writeln("<p>" + result + "</p>");
+
+      result = 5 > 10; // false
+      document.writeln("<p>" + result + "</p>");
+
+      result = 5 < 10; // true
+      document.writeln("<p>" + result + "</p>");
+    </script>
+  </body>
+</html>

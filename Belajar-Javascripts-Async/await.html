@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Await</title>
+  </head>
+  <body>
+    <script>
+      // Promise<JSON Product>
+      function getProduct() {
+        const request = new Request("api/productsalah.json", {
+          method: "GET",
+        });
+
+        const response = fetch(request);
+        // di atas kita gunakan fetch untuk request
+
+        return response.then((response) => response.json());
+        // di bagian  param response artinya kita menggunakan nya sebagai param arrow function
+        // dimana berfungsi mengkonversi response nya menjadi format json
+      }
+
+      // Promise<String ProductName>
+      function getProductNamePromise() {
+        return new Promise(function (resolve, reject) {
+          getProduct() //getProduct nya kita panggil lagi
+            .then((product) => resolve(product.name))
+            // dimana jika tidak error mengambil dari file product.json yaitu mengambil name nya
+            .catch((error) => resolve("Product Not Found"));
+          // jika error tampilkan string di atas
+        });
+        // nah di atas promise product nya
+      }
+
+      //   nah di bawah kita bisa mengambil data promise getProduct dengan lebih simple
+      async function getProductNameAsync() {
+        try {
+          const product = await getProduct(); //await di samping mksd nya adalah tungguin sampe getProduct nya dapet lalu di masukan ke const
+          return product.name; //lalu kita return properti name dari Product nya
+        } catch (e) {
+          return "Product Not Found"; //nah kalo error seperti di samping
+        } finally {
+        }
+        // nah dengan asynch await bisa menggunakan try catch untuk error handler
+      }
+      //   beda nya gk nulis new Promise lagi
+
+      getProductNamePromise().then((productName) => console.info(productName));
+
+      getProductNameAsync().then((productName) => console.info(productName));
+    </script>
+  </body>
+</html>

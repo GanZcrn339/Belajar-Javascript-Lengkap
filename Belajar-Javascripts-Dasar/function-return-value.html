@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Return Value</title>
+  </head>
+  <body>
+    <script>
+      function sayHello(firstName, lastName) {
+        const say = `Hello ${firstName} ${lastName}`;
+        return say;
+      }
+      //   kita buat function sayHello dimana memiliki dua parameter dengan block nya
+      // berisi var say yang value nya adalah string dengan di ikuti pemangiilan kedua parameter
+      //   kemudian kita kembalikan dengan return manggil var say nya yang mana nanti
+      // ketika parameter nya di isi/input maka output nya adalah var say
+      const result = sayHello("Eko", "Khannedy");
+      //   kita isi parameter function sayHello lalu dimasukan ke dalam var result
+      document.writeln(`<p>${result}</p>`);
+      //   var result kita tampilkan menggunakan writeln
+
+      function getFinalValue(value) {
+        if (value > 90) {
+          return "A"; //ketika return sudah terpenuhi maka return dibawah nya tidak akan di eksekusi
+        } else if (value > 80) {
+          return "B";
+        } else if (value > 70) {
+          return "C";
+        } else if (value > 60) {
+          return "D";
+        } else {
+          return "E";
+        }
+      }
+      //   nah kalo di atas function dengan block nya sebuah kondisi
+      // jadi return nya ada banyak sesuai dengan if else nya
+      // di atas return nya berupa nilai A,B,C,D,E sesuai dengan isi dari kondisi if nya (yang ada di dalam kurung())
+
+      const finalValue = getFinalValue(76);
+      //   kita panggil function nya beserta kita input parameter nya
+      // dan kita masukan ke dalam var finalValue
+      document.writeln(`<p>${finalValue}</p>`);
+      //   lalu kita tampilkan var finalValue
+
+      function isContains(array, searchValue) {
+        for (const element of array) {
+          console.info(`Iterasi Element ${element}`);
+          if (element === searchValue) {
+            return true; //ketika sudah memenuhi return pertama
+          }
+        }
+        return false;
+        // maka return dibawah nya seperti return false di atas tidak akan di eksekusi
+      }
+      //   nah kalo di atas parameter nya berisi array, dimana block nya
+      //   berisi for of yang parameter for of nya di isi dengan array yang di masukan ke dalam var element
+      // jadi nanti value dari array akan di tampilkan 1 per 1 menggunakan for of dengan var element
+      // lalu di dalam block for of nya berisi program untuk menampilkan info string di ikuti var element(array)
+      // dan ada if dengan kondisi jika var element yang merupakan for of dari array, array nya memiliki value yang
+      // identik dengan parameter satu lagi yaitusearchValue
+      // maka return nya /atau tampilkan boolean true
+      // jika tidak maka return false
+
+      const array = [1, 32, 4324, 3, 43, 53, 53, 43, 43, 535, 35, 5];
+      const cari_value = 43;
+      //   kita buat var array dan search
+      const found = isContains(array, cari_value);
+      //   dimana kedua var tersebut dimasukan sebagai parameter dari function isContains
+      // dan dimasukan ke dalam var found
+      document.writeln(`<p>${found}</p>`);
+      //   kita tampilkan var found yang akan mereturn return nan dari fucntion inContains
+      //   karena array dan serach memiliki nilai yang sama yaitu 43 maka return nya true
+    </script>
+  </body>
+</html>

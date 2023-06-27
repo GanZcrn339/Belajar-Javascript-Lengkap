@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      {
+        // object freeze & seal
+        // object freeze method untuk object dimana untuk mengubah object menjadi objct yang tidak bisa di ubah
+        // atau di hapus atributte nya
+        // Object Seal untuk mengubah object menjadi obejct yang tidak bisa di hapus attribute nya
+
+        const person = {
+          firstName: "Eko",
+          lastName: "Khannedy",
+        };
+        // kita buat sebuah object dengan dua buah property
+
+        Object.freeze(person);
+        // Object.seal(person);
+        // kita coba gunakan method freeze atau seal pada obejct person
+        // cara penggunaan nya seperti di atas
+
+        person.firstName = "Budi";
+        person.middleName = "Kurniawan";
+        delete person.lastName;
+        // kita coba ubah, tambah dan cba hapus
+
+        console.info(person);
+        // kita tampilkan, maka hasilnya tidak ada yang berubah dari object sebelum nya
+        // jika di seal masih bisa di ubah tapi tidak bisa di hapus
+      }
+
+      {
+        // object assign
+        // untuk menggabungkan atribute/property yang ada di objcet ke object lain
+
+        const target = {
+          firstName: "Eko",
+        };
+        const source = {
+          //firstName: "Eko",
+          lastName: "Khannedy",
+        };
+        // kita buat object target dan source
+
+        Object.assign(target, source);
+        // kita satukan menggunakan object assign
+        console.info(target);
+        // ketika object target di panggil maka property dari object source juga ada
+        console.info(source);
+        // tapi tidak dengan object source ketika di panggil, dia hanya menampilkan property miliknya saja
+
+        // property kedua jika di panggil akan tetap dengan property nya
+        // tapi kalo property pertama pada object assign maka dia akan memiliki property dari object kedua nya
+        // object kedua pada object assign adalah sumber property yang akan di ambil property nya ke object pertama
+        // jika ada property yang sama di sumber nya maka akan di timpa property dari object pertama nya
+      }
+
+      {
+        // Object property name & value
+        // untuk mengambil value atau name dari property sebuah object dalam bentuk array
+
+        const person = {
+          firstName: "Eko",
+          lastName: "Khannedy",
+        };
+
+        console.info(Object.values(person));
+        console.info(Object.getOwnPropertyNames(person));
+      }
+    </script>
+  </body>
+</html>

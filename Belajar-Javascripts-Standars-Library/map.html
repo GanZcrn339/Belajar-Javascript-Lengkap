@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Map</title>
+    <!-- Map mirip dengan tipe data object tapi semua method sudah disediakan -->
+  </head>
+  <body>
+    <script>
+      const map = new Map();
+      map.set("Name", "Eko Kurniawan");
+      map.set("Address", "Indonesia");
+      //   set untuk menambahkan dan mengubah key dan value map
+      //  bagian string pertama di param map adalah key
+      //  terus bagian kedua adalah value nya
+      //  mirip dengan object
+
+      console.info(map);
+      console.info(map.get("Name"));
+      console.info(map.get("Address"));
+      console.info(map.get("Hobby")); //dikarenakan hanya ada dua key maka get ketiga ini akan undefined
+      //   kita ambil key nya dengan method get
+
+      for (const element of map) {
+        console.info(`${element[0]} : ${element[1]}`);
+      }
+      //   kita coba perulangan dengan for of dengan menampilkan
+      //   dua buah key, hasilnya akan muncul key bersama value nya
+
+      map.forEach((value, key) => console.info(`${key} : ${value}`));
+      //   ini juga sama perulangan tapi menggunakan forEach
+    </script>
+  </body>
+</html>

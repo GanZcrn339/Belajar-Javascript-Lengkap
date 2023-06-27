@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node Property</title>
+    <!-- node property seperti property yang ada di class -->
+  </head>
+  <body>
+    <ul id="menu">
+      //( bagian yang di kurungi ini bisa disebut text kosong detail nya bisa di liat di console )
+      <li id="first">First</li>
+      //ini juga sama disebut nya text kosong jadi nanti di konsol tertera text kosong lalu di lanjut ke li nya, jadi gak lgsg ke li selanjut nya
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+    <script>
+      const menu = document.getElementById("menu");
+      console.info(menu);
+      console.info(menu.childNodes);
+      //   bagian childNodes merupakan property yang mana childnodes merupakan property berisi value seluruh child nya
+
+      const second = document.getElementById("second");
+      console.info(second);
+      console.info(second.textContent); //textContent untuk menampilkan isi dari li nya do console
+      console.info(second.previousSibling); //ini untuk melihat element sebelum nya di child yang sejajar atau bisa disebut sodara nya
+      //   console.info(second.previousSibling.previousSibling); nah untuk melihat yang sebelum nya lagi bisa ditulis lagi .previous sibling nya seperti di samping
+      console.info(second.nextSibling); //ini untuk selanjut nya
+      //   console.info(second.nextSibling.nextSibling); ini juga sama unutk melihat yang selanjut nya lagi
+      //yang mana kedua nya hasil nya adalah text yaitu text kosong tadi di antara li nya jika tidak pake nest atau previous sibling lagi
+
+      //   nah di atas juga sama merupakan property
+    </script>
+  </body>
+</html>

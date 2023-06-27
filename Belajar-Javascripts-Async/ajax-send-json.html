@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ajax Send JSON</title>
+  </head>
+  <body>
+    <!-- di bawah kita buat form log in -->
+    <form>
+      <label for="username"
+        >Username:
+        <input type="text" id="username" name="username" />
+      </label>
+      <br />
+      <label for="password"
+        >Password:
+        <input type="password" id="password" name="password" />
+      </label>
+      <br />
+      <input type="button" id="login" value="Login" />
+    </form>
+    <h1 id="response"></h1>
+    <!-- lalu di atas kita bikin h1 dengan id -->
+
+    <script>
+      function doLogin() {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "https://eo7qgpnaje53cub.m.pipedream.net");
+        ajax.onload = function () {
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+        // di atas kita buat ajax.open untuk mengirim data dari client ke server nya dengan method post
+        // lalu onload yaitu kita menerima respond di h1 berupa respond text dari ajax nya
+        ajax.setRequestHeader("Content-Type", "application/json");
+        // kita setRequest Header nya seperti di atas, mksd nya adalah
+        // data yang kita kirim ke server itu tipe kontent nya adalah json
+
+        const json = {
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        };
+        // kita masukan sebagai object value dari username dan pw nya
+
+        ajax.send(JSON.stringify(json));
+        // lalu kita kirim dalam bentuk json dengan mengkonversi nya dulu ke string
+      }
+
+      document.getElementById("login").onclick = doLogin;
+      //   kemudian function doLogin di atas dipakai untuk fungsi klik button nya log in
+    </script>
+  </body>
+</html>

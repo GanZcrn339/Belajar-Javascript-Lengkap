@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML Form Element</title>
+  </head>
+  <body>
+    <form name="commentForm">
+      <!-- kita buat sebuah form dengan diberi nama commentForm -->
+      <label for="comment"> Comment : <input type="text" name="comment" id="comment" /> </label>
+      <br />
+      <!-- di atas kita label dengan input untuk comment nya-->
+      <label for="from"> From : <input type="text" name="from" id="from" /> </label>
+      <br />
+      <!-- di atas juga sama -->
+      <input type="submit" value="Submit" />
+      <!-- lalu kita buat submit -->
+    </form>
+    <!-- dibawah kita buat pembungkus dengan id commandlist -->
+    <div id="commentList">
+      <!-- <p>hasil label "comment" hasil label "from"</p> -->
+    </div>
+
+    <script>
+      document.querySelector("form[name=commentForm]").onsubmit = function (event) {
+        event.preventDefault();
+        // kita ambil form dengan name nya, lalu tambahkan event handler onsubmit yang mana function nya
+        // preventDefault, jika kita sudah mengsubmit hasil nya tidak akan di refresh tapi jika tidak menggunakan
+        // prevent default maka hasil nya akan di refresh
+
+        const commentList = document.getElementById("commentList");
+        const comment = document.getElementById("comment").value;
+        const from = document.getElementById("from").value;
+        // kita masukan ke dua label dan div di atas untuk label kita ambil value nya juga
+
+        const commentItem = document.createElement("p");
+        // disini kita buat element p dan masukan kedalam var
+        commentItem.textContent = `${comment} - ${from}`;
+        // lalu kita isi element p tersebut dengan hasil input dari label comment dan from
+        commentList.appendChild(commentItem);
+        // kemudian tambahakan ke commandlist yaitu element div
+
+        document.querySelector("form[name=commentForm]").reset();
+        // kemudian kita reset supaya bisa melakukan hal yang sama ke kode di atas
+      };
+    </script>
+  </body>
+</html>

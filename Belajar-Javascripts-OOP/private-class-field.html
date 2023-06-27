@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class : Private Field</title>
+  </head>
+  <body>
+    <script>
+      class Counter {
+        #counter = 0;
+        // cara menggunakan private field kita tinggal menambahkan tanda #
+        // di bagian property nya
+        // private field tidak bisa di akses maupun di ubah dari luar class
+
+        increment() {
+          this.#counter++;
+          //   nah jika kita ingin menggunakan property private di atas
+          //   kita harus menambahkan # nya juga
+        }
+
+        decrement() {
+          this.#counter--;
+        }
+
+        get() {
+          return this.#counter;
+        }
+        // disini kita get untuk mendapatkan hasil increment dan decrement di atas
+      }
+
+      const counter = new Counter();
+      //   kita buat sebuah object dari class counter di atas
+
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      counter.increment();
+      //   kita gunakan method increment yang ada di class yang mana mengincrement property private nya
+
+      console.info(counter.get());
+      //   kita liat hasil nya
+
+      counter.counter = 100;
+      //   jika kita membuat property dengan nama yang sama, maka akan membuat property
+      // baru karena merupakan public property
+      //   counter.#counter = 100; jika di paksakan seperti di samping akan error
+
+      console.info(counter);
+      //   kita tampilkan si object untuk melihat perbedaan antara public dan private
+      //   kedua nya akan menjadi instance object nya
+    </script>
+  </body>
+</html>

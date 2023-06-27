@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object</title>
+    <!-- Constructor function -->
+  </head>
+  <body>
+    <script>
+      function Person(firstName, lastName) {
+        // kita juga bisa menambahkan parameter di class
+        this.firstName = firstName; //untuk menambahkan property di constructor function bisa menambahkan this. diikuti nama properti dan value nya
+        this.lastName = lastName; //bagian value di kasus ini diambil dari parameter nya
+        this.sayHello = function (name) {
+          console.info(`Hello ${name}, my name is ${this.firstName}`);
+        }; //nah di atas sayHello merupakan function di dalam const function
+        //yang nanti bisa di pakai juga di object nya
+      }
+      //   pada bagian atas, merupakan constructor function yang sekaligus bisa di bilang sebuah class
+      // construction function menggunakan huruf besar di awal nama function nya untuk setiap kata nya
+
+      const eko = new Person("Eko", "Khannedy"); //kita juga bisa menginput parameter nya
+      //   eko.firstname = "eko" bisa saja menambahkan property seperti ini, di kasus di atas kita tidak perlu membuat seperti ini di karenakan value dari propety nya di input lewat parameter
+      eko.sayHello("Joko"); //nah di samping adalah cara menambahkan method/function di object nya yang sebeleum nya di class sudah di buat method tersebut
+      //   cara pemanggilan nya seperti di atas, yang mana bisa di gunakan tanpa batas
+      //   seperti const eko dan const budi di bawah dan atas ini
+
+      const budi = new Person("Budi", "Nugraha");
+      budi.sayHello("Joko");
+
+      console.log(eko);
+      console.log(budi);
+      //   nah kita tampilkan di console
+    </script>
+  </body>
+</html>

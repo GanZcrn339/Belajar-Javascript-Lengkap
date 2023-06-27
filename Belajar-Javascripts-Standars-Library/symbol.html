@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Symbol</title>
+    <!-- Symbol merupakan tipe data yang di garansi akan selalu unique
+    setiap kali kita membuat data symbol -->
+  </head>
+  <body>
+    <script>
+      {
+        // symbol
+        const firstName = Symbol("firstName");
+        // const firstName = Symbol("firstName"); nah jika kita buat symbol yang sama untuk kedua kali nya, walaupun desc nya sama sybol tersebut akan tetap beda jika di bandingkan
+        const lastName = Symbol("lastName");
+
+        const person = {};
+        person[firstName] = "Eko";
+        person[lastName] = "Khannedy";
+
+        console.info(person);
+      }
+
+      {
+        // symbol for untuk membuat symbol tanpa membuat variable
+
+        console.info(Symbol.for("firstName") === Symbol.for("firstName"));
+
+        const person = {};
+        person[Symbol.for("firstName")] = "Eko";
+        person[Symbol.for("lastName")] = "Khannedy";
+        // seperti di atas
+
+        console.info(person);
+        console.info(person[Symbol.for("firstName")]);
+        console.info(person[Symbol.for("lastName")]);
+        // cara pemanggilan nya juga sama
+      }
+    </script>
+  </body>
+</html>

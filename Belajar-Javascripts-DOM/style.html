@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Style</title>
+    <!-- kita bisa memanipulasi style tapi di dom format penulisan nya menjadi pascalCase -->
+  </head>
+  <body>
+    <input type="button" value="blue" />
+    <input type="button" value="red" />
+    <input type="button" value="yellow" />
+    <div id="canvas" style="width: 500px; height: 500px; background-color: black"></div>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const buttons = document.querySelectorAll("input");
+      //   kita ambil canvas nya dan kita ambil juga semua input nya
+
+      for (let button of buttons) {
+        button.onclick = function () {
+          canvas.style.backgroundColor = button.getAttribute("value");
+        };
+      }
+      //   kita gunakan perulangan dor of untuk input nya
+      //   dimana ketika input button nya di click maka background Color style dari element ber id canvas akan berubah warna
+      //   sesuai dengan value dari input
+    </script>
+  </body>
+</html>

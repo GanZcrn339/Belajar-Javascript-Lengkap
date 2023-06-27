@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object Method</title>
+    <!-- Objek method adalah function yang menjadi value dari property di sebuah object
+    -->
+  </head>
+  <body>
+    <script>
+      // const person = {
+      //     name: "Eko",
+      //     sayHello: function (name){
+      //         alert(`Hello ${name}`);
+      //     }
+      // };
+
+      //   contoh penulisan nya seperti diatas menggunakan anonymous function
+
+      // function sayHello(name) {
+      // alert('Hello $(name)');
+      // }
+
+      // const person = {
+      // name: "Eko",
+      // sayHello : sayHello
+      // }
+      // kalo di atas value property sayHello di isi dengan function yang sudah di buat
+      const person = {
+        name: "Eko",
+      };
+
+      person.sayHello = function (name) {
+        alert(`Hello ${name}`);
+      };
+      //   nah kalo di atas kita menambahkan property dan function nya ke object
+
+      person.sayHello("Budi");
+      //   kemudian di atas cara pemanggilan object method
+    </script>
+  </body>
+</html>

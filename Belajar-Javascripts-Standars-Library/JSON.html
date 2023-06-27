@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSON</title>
+    <!-- JSON Adalah data string yang bentuk nya mirip dengan
+    Object -->
+  </head>
+  <body>
+    <script>
+      const person = {
+        firstName: "Eko",
+        middleName: "Kurniawan",
+        lastName: "Khannedy",
+        address: {
+          country: "Indonesia",
+          city: "Subang",
+        },
+        hobbies: ["Coding", "Game", "Traveling"],
+      };
+      //   kita buat object seperti di atas dimana di dalam object person ada object address lagi
+
+      const json = JSON.stringify(person);
+      //   stringify sebuah method yang berfungsi untuk mengubah object menjadi json string
+      console.info(json);
+      //   Kita tampilkan
+
+      const jsonObject = JSON.parse(json);
+      //   ini sebalik nya dimana .parse adalah sebuah method untuk mengubah JSON Menjadi
+      //   object dimana isi property nya akan di urutkan sesuai nama nya A-Z
+      console.info(jsonObject);
+      //   Kita tampilkan
+    </script>
+  </body>
+</html>

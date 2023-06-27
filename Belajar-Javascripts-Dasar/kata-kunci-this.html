@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kata Kunci this</title>
+  </head>
+  <body>
+    <script>
+      console.info(this);
+      //   nah kalo kita akses this di global yang keluar yaitu windows (browser nya)
+
+      function sample() {
+        console.info(this);
+        // kali kita akses di local scope juga akan windows
+
+        function inner() {
+          console.info(this);
+          //   kalo di dalam nested function juga windows
+        }
+
+        inner();
+      }
+
+      sample();
+
+      //   const person = {
+      //     name: "Eko",
+      //     sayHello: function (name) {
+      //       console.info(this);
+      // nah kalo di dalam object akan mengarah/atau muncul nama objek nya
+      // di atas nama objek nya person, maka akan muncul objek person beserta isi nya
+      //     },
+      //   };
+
+      //   const person = {
+      //     name: "Eko",
+      //     sayHello: function (name) {
+      //       console.info(`Hello ${name} My Name is ${name}`);
+      //     },
+      //   };
+      // person.sayHello("padjar")
+      // jika kita ingin mengakses property name di dalam object method yang objek nya sama
+      // kita bisa menggunakan kata kunci this jika tidak yang di panggil nya adalah input dari function nya
+      // bukan property name
+
+      // di atas input nya seperti ini
+      // Hello padjar My name is Padjar
+      // yang seharusnya kita inginkan adalah
+      // Hello eko My name is eko,
+      //   lanjut di bawah
+
+      const person = {
+        name: "Eko",
+        sayHello: function (value) {
+          console.info(`Hello ${value} My Name is ${this.name}`);
+        },
+      };
+      //   jika kita menggunakan this ketika memanggil property name maka yang di panggil
+      // nya property name nya bukan parameter function nya seperti diatas
+      // kita cukup menggunakan kata kunci this.name
+
+      person.sayHello("Budi");
+      person.sayHello("Joko");
+    </script>
+  </body>
+</html>

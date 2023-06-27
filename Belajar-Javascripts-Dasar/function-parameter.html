@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Parameter</title>
+  </head>
+  <body>
+    <script>
+      function sayHello(firstName, lastName) {
+        document.writeln(`<p>Hello ${firstName} ${lastName}</p>`);
+      }
+      //   nah kalo ini function nya kita isi parameter nya, dimana parameter nya bisa kita isi
+      // dengan var yang undefined , yang bisa kita isi nanti nya di bagian parameter ketika memanggil
+      // function nya seperti di bawah ini yang di isi dengan array..
+      //   nah nanti akan tampil data array yang di input tersebut, karena function sayHello di atas
+      // berisi method writeln yang isi nya menampilkan value dari kedua var yang sudah di simpan di parameter diatas
+      //   parameter function bisa berisi apa saja, bukan hanya string, tapi bisa di isi dengan variabel yang memiliki value juga atau yang lainya
+
+      sayHello("Eko", "Khannedy"); //berarti first name jadi = eko dan lastname = Khannedy
+      sayHello("Budi", "Nugraha");
+    </script>
+  </body>
+</html>

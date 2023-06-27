@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Attribute</title>
+    <!-- attr = nama seperti id, src itu disebut attribute
+    isi dari atribute adalah value seperti key value
+key=nama attribute
+value=isi attribute
+layaknya object
+-->
+  </head>
+  <body>
+    <img id="logo" src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo" />
+
+    <script>
+      const logo = document.getElementById("logo");
+      //   kita masukan dulu element nya ke dalam var
+
+      // const src = logo.getAttributeNode("src"); //kode disamping jika ingin mengambil key dan value dari attribute
+      const src = logo.getAttribute("src"); //kalo disamping hanya value dari attribute nya
+      console.info(src);
+      //kita tampilkan value nya
+
+      // console.info(src.name);
+      // console.info(src.value);
+      //  kode di atas digunakan untuk menampilkan key dan value dari attribute jika menggunakan method getAttributeNode
+    </script>
+  </body>
+</html>

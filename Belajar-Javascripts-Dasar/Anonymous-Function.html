@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Function Anonymous</title>
+    <!-- function tanpa nama yang harus di masukan ke dalam variabel -->
+  </head>
+  <body>
+    <script>
+      const say = function (name) {
+        document.writeln(`<p>Hello ${name}</p>`);
+      };
+      //   kita buat anonymous function seperti di atas yang dimasukan kedalam var say
+
+      say("Eko");
+      say("Budi");
+      //   var nya jadi function yang bisa kita input var nya
+
+      function giveMeName(callback) {
+        callback("Eko");
+      }
+
+      giveMeName(say);
+      //   nah di atas adalah anonymous function yang di input sebagai parameter function
+
+      giveMeName(function (name) {
+        document.writeln(`<p>Hi ${name}</p>`);
+      });
+      //   kalo ini yang dimasukan ke dalam paramter tanpa dimasukan ke dalam var terlebih dahulu
+
+      giveMeName(function (name) {
+        document.writeln(`<p>Hi ${name}</p>`);
+      });
+
+      giveMeName(function (name) {
+        document.writeln(`<p>Hi ${name}</p>`);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set</title>
+    <!-- set mirip dengan array tapi isi nya selalu unique
+    
+    -->
+  </head>
+  <body>
+    <script>
+      const set = new Set();
+
+      set.add("Eko");
+      set.add("Eko"); //jika kita menambahkan dua value yang sama maka hanya 1 yg di ambil
+      set.add("Kurniawan");
+      set.add("Khannedy");
+
+      console.info(set);
+
+      set.forEach((value) => console.info(value));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NodeList</title>
+    <!-- Perubahan yang ada di nodelist live, akana mengubah semua element yang di get -->
+  </head>
+  <body>
+    <ul id="menu1">
+      <li id="first">First</li>
+      <li id="second">Second</li>
+      <li id="third">Third</li>
+    </ul>
+
+    <ul id="menu2">
+      <li>Eko</li>
+      <li>Kurniawan</li>
+      <li>Khannedy</li>
+    </ul>
+
+    
+    <script>
+      const menu1 = document.getElementById("menu1");
+      const list = menu1.childNodes;
+      //   di atas kita get element dengan id menu yang merupakan parent
+      // lalu child nya di masukan ke dalam var list
+
+      menu1.appendChild(document.createElement("li"));
+      menu1.appendChild(document.createElement("li"));
+      //   kita appendChild menu1 yang artinya kita tambahkan element li ke child nya elemenet dengan id menu1
+
+      console.info(list);
+      //kita tampilkan
+
+      //   walaupun menu1.childNOdes nya sudah di masukan ke dalam var
+      //   jika kita ubah, maka akan ikut berubah ketika kita tampilkan
+      //   contoh nodelist live yaitu node.childNodes
+
+      //   ketika kita ambil child nya dan di masukan ke dalam variable
+    //   lalu kita ubah atau tambahkan child nya seperti di atas lewat parent nya
+    // maka var yang berisi childnode tadi akan ikut berubah
+    </script>
+    </body>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Class : Public Field</title>
+    <!-- Ini mah gampang liat aja OOP PZN bagian public class field -->
+  </head>
+  <body>
+    <script>
+      class Customer {
+        firstName;
+        lastName;
+        balance = 0;
+        // di atas merupakan property yang di tulis di field
+        // yang mana akan di tempatkan di instance object nya
+
+        constructor(firstName, lastName) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+        // kita juga bisa mengubah atau mengisi value nya seperti di atas
+        // dengan memanfaatkan parameter di bagian constructur
+
+        sayHello() {}
+      }
+
+      const eko = new Customer("Eko", "Khannedy");
+      console.info(eko);
+    </script>
+  </body>
+</html>
